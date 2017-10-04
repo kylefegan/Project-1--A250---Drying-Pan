@@ -46,10 +46,10 @@ public:
 
 
 	//printStudentInfo
-	
+	void printStudentInfo() const;
 
 	//printStudentInfo
-
+	void printStudentInfo(double tuition) const;
 
 	//getCoursesEnrolled
 
