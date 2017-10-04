@@ -1,7 +1,9 @@
 # Project-1-A250---Drying-Pan
-Project 1 for gernsberger A250 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you want you can write down your assigned functions below
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Kyle Fegan:
   Student Member Functions:
-    Function printStudentInfo
-    Function printStudentInfo (overloaded)
+    - Function printStudentInfo
+    - Function printStudentInfo (overloaded)
