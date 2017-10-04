@@ -6,7 +6,7 @@ Currently working on Part B, which includes...
   - Student.cpp
   - Main.cpp
 
-Tasks:
+# Tasks:
 
 Kyle Fegan:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
