@@ -8,7 +8,7 @@ Currently working on Part B, which includes...
 
 # Tasks:
 
-Kyle Fegan:
+## Kyle Fegan:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Student::printStudentInfo
 - Student::printStudentInfo (overload)
