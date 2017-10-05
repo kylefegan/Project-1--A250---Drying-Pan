@@ -14,7 +14,7 @@ Currently working on Part B, which includes...
 - Student::printStudentInfo (overload)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Status:**
-*Both functions are complete, I have commited both the h and cpp file.
+*Both functions are complete, I have commited both the h and cpp file.*
 
 ### Matt Ngo:
 
