@@ -12,7 +12,7 @@ Currently working on Part B, which includes...
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Student::printStudentInfo
 - Student::printStudentInfo (overload)
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Status**
 
 *Both functions are complete, I have commited
@@ -20,4 +20,3 @@ the h file and took out a pull request for
 the cpp. We can accept the pull at any time but
 I was thinking we should accept it after the
 prerequisite functions are done.*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
