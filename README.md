@@ -26,15 +26,15 @@ prerequisite functions are done.*
 
 ### Tristan Manning:
 
-#Github Terms
+# Github Terms
 
-###branch
+### branch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A branch is basically a copy (or an instance) of the project.
 The master branch is the final version of the project.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-###pull request
+### pull request
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A pull request is simply how you submit changes for
 approval. If you don't want your changes to immediately
@@ -44,7 +44,7 @@ look over. This is great to use if you aren't sure whether
 or not your changes are correct.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-###issue
+### issue
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 An issue is a conflict in the code which was
 detected when a merge between branches was attempted.
