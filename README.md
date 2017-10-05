@@ -46,5 +46,6 @@ whether or not your changes are correct.
 
 ### issue
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-An issue is a conflict in the code which was detected when a merge between branches was attempted. Oftentimes Github will point these out and come up with a temporary fix until someone looks into the error.
+An issue is a conflict in the code which was detected when a merge between branches was attempted. Oftentimes Github will point these
+out and come up with a temporary fix until someone looks into the error.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
