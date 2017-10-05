@@ -29,7 +29,7 @@ I was thinking we should accept it after the prerequisite functions are done.*
 
 ### repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The file where your project and all of its contents are stored.
+The file where your projects and all their contents are stored.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### branch
