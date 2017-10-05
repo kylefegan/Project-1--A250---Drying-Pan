@@ -36,6 +36,7 @@ void Student::printStudentInfo() const
 {
   cout << getID() << " -- ";
   printName();
+  cout << endl;
 }
 
 // printStudentInfo (overloaded)
