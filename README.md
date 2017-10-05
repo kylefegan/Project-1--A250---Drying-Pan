@@ -30,6 +30,12 @@ prerequisite functions are done.*
 
 # Github Terms:
 
+### repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The file where your project and all of its contents
+are stored.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ### branch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A branch is basically a copy (or an instance) of the project.
