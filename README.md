@@ -1,4 +1,4 @@
-# Project-1-A250---Drying-Pan
+# Project1 A250 DryingPan
 Project 1 for gernsberger A250 
 
 Currently working on Part B, which includes...
