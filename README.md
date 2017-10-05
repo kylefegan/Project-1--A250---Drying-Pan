@@ -28,7 +28,7 @@ prerequisite functions are done.*
 
 
 
-# Github Terms
+# Github Terms:
 
 ### branch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
