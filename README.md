@@ -48,3 +48,9 @@ whether or not your changes are correct.
 An issue is a conflict in the code which was detected when a merge between branches was attempted. Oftentimes Github will point these
 out and come up with a temporary fix until someone looks into the error.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+### fork
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Forking a project creates a personal copy of the project on your account. This allows you to mess around with the project freely without
+publishing any of your changes to the repository.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
