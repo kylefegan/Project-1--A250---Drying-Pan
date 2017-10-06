@@ -21,6 +21,8 @@ Currently working on Part B, which includes...
 - Student::billingAmount
 - Student::getCreditsEnrolled
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Status:**
+*Both functions complete (first draft)*
 ### Andre Cortes:
 
 ### Tristan Manning:
