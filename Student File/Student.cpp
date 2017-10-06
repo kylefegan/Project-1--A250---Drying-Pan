@@ -17,7 +17,17 @@
 
 
 // getCreditsEnrolled
-
+int Student::getCreditsEnrolled() const
+{
+	int credits;
+	//iterates through vector <Course> coursesEnrolled
+	for (auto currentCourse : coursesEnrolled)
+	{
+		//getCourseCredits() from Course class
+		credits += currentCourse.getCourseCredits();
+	}
+	return credits;
+}
 
 // isTuitionPaid
 
@@ -29,7 +39,10 @@
 
 
 // billingAmount
-
+int Student::billingAmount(double tuitionRate) const
+{
+	return tuitionRate*getCreditsEnrolled();
+}
 
 // printStudentInfo
 void Student::printStudentInfo() const
