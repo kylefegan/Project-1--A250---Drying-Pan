@@ -17,7 +17,10 @@ Currently working on Part B, which includes...
 *Both functions are complete, I have commited both the h and cpp file.*
 
 ### Matt Ngo:
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Student::billingAmount
+- Student::getCreditsEnrolled
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ### Andre Cortes:
 
 ### Tristan Manning:
