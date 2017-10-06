@@ -31,7 +31,7 @@ public:
 
 
 	//getCreditsEnrolled
-
+	int getCreditsEnrolled() const;
 
 	//isTuitionPaid
 
@@ -43,7 +43,7 @@ public:
 
 
 	//billingAmount
-
+	int billingAmount(double tuitionRate) const;
 
 	//printStudentInfo
 	void printStudentInfo() const;
