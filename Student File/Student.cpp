@@ -60,7 +60,7 @@ bool Student::isEnrolledInCourse(const string& course)
 }
 
 // getGpa
-double Student::getGpa(vector<Course> object) const
+double Student::getGpa() const
 {
 	char grades;
 	double gPA = 0;
