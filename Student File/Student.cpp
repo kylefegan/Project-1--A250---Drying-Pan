@@ -96,7 +96,10 @@ void Student::printStudentInfo(double tuition) const
   //Course List
   cout << "Course No  Course Name  Credits Grade" << endl;
   //No need for setw as the header is constant
-  coursesEnrolled.printCourseInfo();
+  for (auto currentCourse : coursesEnrolled)
+  {
+  	currentCourse.printCourseInfo(isTuitionPaid);
+  }
   cout << endl;
   
   //Credit Hours & GPA
