@@ -44,7 +44,7 @@ public:
 	int getCreditsEnrolled() const;
 
 	//isTuitionPaid
-	int getNumberOfCourses() const;
+	bool isTuitionPaid() const
 
 	//isEnrolledInCourse
 	bool isEnrolledInCourse(const string& course);
