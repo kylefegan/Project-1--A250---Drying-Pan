@@ -62,10 +62,31 @@ bool Student::isEnrolledInCourse(const string& course)
 // getGpa
 double Student::getGpa(vector<Course> object) const
 {
-	for (size_t i = 0; i < object.size; i++)
+	char grades;
+	double gPA = 0;
+	double count = 0;
+	for (auto currentCourse : coursesEnrolled)
 	{
-		
+		grades = currentCourse.getCourseGrade();
+		switch (grades)
+		{
+			case 'A':
+				gPA += 4.0;
+				break;
+			case 'B':
+				gPA += 3.0;
+				break;
+			case 'C':
+				gPA += 2.0;
+				break;
+			case 'D':
+				gPA += 1.0;
+				break;
+		}
+		count++;
 	}
+	
+	return gPA / count;
 }
 
 // billingAmount
