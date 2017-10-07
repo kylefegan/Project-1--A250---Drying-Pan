@@ -19,25 +19,25 @@ class Student: public Person
 public:
 
 	//Default constructor   
-	 
+	 Student() : studentID(0), numberOfCourses(0), tuitionWasPaid(false) {}
 
 	//setStudentInfo
-
+	void setStudentInfo(const string& first, const string& last, int idNum, bool paidTuition, vector<Course>& studentClass);
 
 	//getID
-
+	int getID() const;
 
 	//getNumberOfCourses
-
+	int getNumberOfCourses() const;
 
 	//getCreditsEnrolled
 	int getCreditsEnrolled() const;
 
 	//isTuitionPaid
-
+	int getNumberOfCourses() const;
 
 	//isEnrolledInCourse
-	
+	bool isEnrolledInCourse(const string& course);
 
 	//getGpa
 	double getGpa(vector<Course> object) const;
@@ -55,7 +55,7 @@ public:
 	vector<Course> getCoursesEnrolled();
 
 	//Destructor
-
+	~Student();
 
 private:
     int studentID;				
