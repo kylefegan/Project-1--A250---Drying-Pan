@@ -41,7 +41,7 @@ int Student::getNumberOfCourses() const
 // getCreditsEnrolled
 int Student::getCreditsEnrolled() const
 {
-	int credits;
+	int credits = 0;
 	//iterates through vector <Course> coursesEnrolled
 	for (auto currentCourse : coursesEnrolled)
 	{
@@ -60,11 +60,11 @@ bool Student::isTuitionPaid() const
 // isEnrolledInCourse
 bool Student::isEnrolledInCourse(const string& course)
 {
-	for (size_t i = 0; i < coursesEnrolled.size(); i++)
-	{
-		if (coursesEnrolled[i].getCourseNumber() == course)
-			return true;
-	}
+	for (auto currentCourse : coursesEnrolled)
+  {
+  	if(currentCourse.getCourseNumber() == course)
+		return true;
+  }
 	return false;
 }
 
@@ -99,7 +99,7 @@ double Student::getGpa() const
 }
 
 // billingAmount
-int Student::billingAmount(double tuitionRate) const
+double Student::billingAmount(double tuitionRate) const
 {
 	return tuitionRate*getCreditsEnrolled();
 }
@@ -128,7 +128,7 @@ void Student::printStudentInfo(double tuition) const
   //No need for setw as the header is constant
   for (auto currentCourse : coursesEnrolled)
   {
-  	currentCourse.printCourseInfo(isTuitionPaid);
+  	coursesEnrolled.printCourseInfo(isTuitionPaid());
   }
   cout << endl;
   
@@ -138,7 +138,7 @@ void Student::printStudentInfo(double tuition) const
   else
   {
     cout << "*** Grades are being held for not paying the tuition. ***" << endl;
-    cout << "Amount Due: $" << tuition << endl;
+    cout << "Amount Due: $" << billingAmount(tuition) << endl;
   }
   
   //Footer
