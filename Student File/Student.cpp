@@ -8,13 +8,26 @@
 
 
 // setStudentInfo
-
-
+void Student::setStudentInfo(const string& first, const string& last, int idNum, bool paidTuition, vector<Course>& studentClass)
+{
+	setName(first, last);
+	studentID = idNum;
+	tuitionWasPaid = paidTuition;
+	coursesEnrolled = studentClass;
+	//uses size to determine number of courses
+	numberOfCourses = static_cast<int>(studentClass.size());
+}
 // getID
-
+int Student::getID() const
+{
+	return studentID;
+}
 
 // getNumberOfCourses
-
+int Student::getNumberOfCourses() const
+{
+	return numberOfCourses;
+}
 
 // getCreditsEnrolled
 int Student::getCreditsEnrolled() const
@@ -30,10 +43,21 @@ int Student::getCreditsEnrolled() const
 }
 
 // isTuitionPaid
-
+bool Student::isTuitionPaid() const
+{
+	return tuitionWasPaid;
+}
 
 // isEnrolledInCourse
-
+bool Student::isEnrolledInCourse(const string& course)
+{
+	for (size_t i = 0; i < coursesEnrolled.size(); i++)
+	{
+		if (coursesEnrolled[i].getCourseNumber() == course)
+			return true;
+	}
+	return false;
+}
 
 // getGpa
 
@@ -86,3 +110,4 @@ void Student::printStudentInfo(double tuition) const
 
 
 // destructor
+Student::~Student() {}
