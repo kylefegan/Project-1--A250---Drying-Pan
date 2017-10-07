@@ -4,9 +4,6 @@
 #include <string>
 #include <vector>
 
-// default constructor
-
-
 // setStudentInfo
 void Student::setStudentInfo(const string& first, const string& last, int idNum, bool paidTuition, vector<Course>& studentClass)
 {
