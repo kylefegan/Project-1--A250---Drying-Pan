@@ -40,7 +40,7 @@ public:
 	
 
 	//getGpa
-
+	double getGpa(vector<Course> object) const;
 
 	//billingAmount
 	int billingAmount(double tuitionRate) const;
@@ -52,7 +52,7 @@ public:
 	void printStudentInfo(double tuition) const;
 
 	//getCoursesEnrolled
-
+	vector<Course> getCoursesEnrolled();
 
 	//Destructor
 
