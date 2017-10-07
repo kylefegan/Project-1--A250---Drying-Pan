@@ -1,3 +1,15 @@
+/*
+	Ngo, Matthew
+	Fegan, Kyle
+	Manning, Tristan
+	Cortes, Andre
+
+	CS A250
+	October 7, 2017
+
+	Project 1 - Part B
+*/
+
 #include "Student.h"
 
 #include <iostream>
