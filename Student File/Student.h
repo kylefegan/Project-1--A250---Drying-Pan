@@ -53,7 +53,7 @@ public:
 	double getGpa() const;
 
 	//billingAmount
-	int billingAmount(double tuitionRate) const;
+	double billingAmount(double tuitionRate) const;
 
 	//printStudentInfo
 	void printStudentInfo() const;
