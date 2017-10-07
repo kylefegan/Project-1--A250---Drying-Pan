@@ -60,7 +60,13 @@ bool Student::isEnrolledInCourse(const string& course)
 }
 
 // getGpa
-
+double Student::getGpa(vector<Course> object) const
+{
+	for (size_t i = 0; i < object.size; i++)
+	{
+		
+	}
+}
 
 // billingAmount
 int Student::billingAmount(double tuitionRate) const
@@ -107,7 +113,10 @@ void Student::printStudentInfo(double tuition) const
 }
 
 // getCoursesEnrolled
-
+vector<Course> Student::getCoursesEnrolled()
+{
+	return coursesEnrolled;
+}
 
 // destructor
 Student::~Student() {}
