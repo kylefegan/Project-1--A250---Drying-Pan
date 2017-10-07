@@ -40,7 +40,7 @@ public:
 	bool isEnrolledInCourse(const string& course);
 
 	//getGpa
-	double getGpa(vector<Course> object) const;
+	double getGpa() const;
 
 	//billingAmount
 	int billingAmount(double tuitionRate) const;
