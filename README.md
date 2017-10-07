@@ -26,7 +26,10 @@ Currently working on Part B, which includes...
 ### Andre Cortes:
 
 ### Tristan Manning:
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Student::getGpa
+- Student::getCoursesEnrolled
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 # Github Terms:
