@@ -3,7 +3,9 @@
 	Fegan, Kyle
 	Manning, Tristan
 	Cortes, Andre
+	
 	CS A250
+	
 	October 7, 2017
 	Project 1 - Part B
 */
@@ -44,7 +46,7 @@ public:
 	int getCreditsEnrolled() const;
 
 	//isTuitionPaid
-	bool isTuitionPaid() const
+	bool isTuitionPaid() const;
 
 	//isEnrolledInCourse
 	bool isEnrolledInCourse(const string& course);
