@@ -128,7 +128,7 @@ void Student::printStudentInfo(double tuition) const
   //No need for setw as the header is constant
   for (auto currentCourse : coursesEnrolled)
   {
-  	coursesEnrolled.printCourseInfo(isTuitionPaid());
+  	currentCourse.printCourseInfo(isTuitionPaid());
   }
   cout << endl;
   
