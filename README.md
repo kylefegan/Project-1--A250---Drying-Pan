@@ -1,35 +1,40 @@
 # Project 1 - A250 - Drying Pan
 Project 1 for gernsberger A250 
 
-Currently working on Part B, which includes...
-  - Student.h
-  - Student.cpp
-  - Main.cpp
+Currently working on Part C
 
 # Tasks:
 
 ### Kyle Fegan:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Student::printStudentInfo
-- Student::printStudentInfo (overload)
+- printStudentsByCourse()
+- printAllStudents()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Status:**
-*Both functions are complete, I have commited both the h and cpp file.*
+
 
 ### Matt Ngo:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Student::billingAmount
-- Student::getCreditsEnrolled
+- getNoOfStudents()
+- printStudentsByName()
+- Destructor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Status:**
-*Both functions complete (first draft)*
+
 ### Andre Cortes:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- printStudentsByID()
+- destroyStudentList()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Status:**
 
 ### Tristan Manning:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Student::getGpa
-- Student::getCoursesEnrolled
+- Default constructor
+- addStudent()
+- printStudentsOnHold()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Status:**
 
 
 # Github Terms:
