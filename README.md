@@ -1,7 +1,9 @@
 # Project 1 - A250 - Drying Pan
 Project 1 for gernsberger A250 
 
-Currently working on Part C
+Currently working on Part C:
+  StudentList.h
+  StudentList.cpp
 
 # Tasks:
 
