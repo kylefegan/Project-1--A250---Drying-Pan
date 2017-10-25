@@ -2,8 +2,11 @@
 Project 1 for gernsberger A250 
 
 Currently working on Part C:
-  StudentList.h
-  StudentList.cpp
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- StudentList.h
+- StudentList.cpp
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 # Tasks:
 
