@@ -28,7 +28,27 @@
 
 
 // printStudentByID
-
+void StudentList::printStudentByID(int idNum, double tuitionRate) const
+{
+	if (count == 0)
+		cerr << "List is Empty" << endl;
+	else
+	{
+		Node* current = first;
+		bool found = false;
+		while (current != nullptr && !found)
+		{
+			if (current->getStudent().getID() == idNum)
+			{
+				current->getStudent().printStudentInfo(tuitionRate);
+				found = true;
+			}
+			current = current->getNext();
+		}
+		if (!found)
+			cout << "No student with ID # found in list" << endl;
+	}
+}
 
 
 // printStudentsByCourse
@@ -52,8 +72,17 @@
 
 
 // destroyStudentList
-
-
+void StudentList::destroyStudentList()
+{
+	Node  *temp = first;
+	while (first != nullptr)
+	{
+		temp = temp->getNext();
+		delete first;
+		first = nullptr;
+	}
+	count = 0;
+}
 
 // destructor
 
