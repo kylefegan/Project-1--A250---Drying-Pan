@@ -80,16 +80,16 @@ double Student::getGpa() const
 		switch (grades)
 		{
 			case 'A':
-				gPA += 4.0;
+				gPA += 4.0 * currentCourse.getCourseCredits();
 				break;
 			case 'B':
-				gPA += 3.0;
+				gPA += 3.0 * currentCourse.getCourseCredits();
 				break;
 			case 'C':
-				gPA += 2.0;
+				gPA += 2.0 * currentCourse.getCourseCredits();
 				break;
 			case 'D':
-				gPA += 1.0;
+				gPA += 1.0 * currentCourse.getCourseCredits();
 				break;
 		}
 		count++;
