@@ -47,7 +47,7 @@ public:
 
 
 	// getNoOfStudents
-
+	int getNoOfStudents() const;
 
 	// printStudentByID
 
@@ -56,7 +56,7 @@ public:
 
 
 	// printStudentByName
-
+	void printStudentByName(const string& lastName) const;
 
 	// printStudentsOnHold
 
@@ -71,7 +71,7 @@ public:
 	
 
 	// destructor
-
+	~StudentList();
 
 private:
 	Node *first;
