@@ -24,14 +24,17 @@
 
 
 // getNoOfStudents
-
+int StudentList::getNoOfStudents() const
+{
+	return count;
+}
 
 
 // printStudentByID
 void StudentList::printStudentByID(int idNum, double tuitionRate) const
 {
 	if (count == 0)
-		cerr << "List is Empty" << endl;
+		cerr << "List is empty" << endl;
 	else
 	{
 		Node* current = first;
@@ -46,7 +49,7 @@ void StudentList::printStudentByID(int idNum, double tuitionRate) const
 			current = current->getNext();
 		}
 		if (!found)
-			cout << "No student with ID # found in list" << endl;
+			cout << "No student with ID " << idNum << " found in list" << endl;
 	}
 }
 
@@ -56,7 +59,31 @@ void StudentList::printStudentByID(int idNum, double tuitionRate) const
 
 
 // printStudentByName
+void StudentList::printStudentByName(const string& lastName) const
+{
+	if (count == 0)
+	{
+		cerr << "List is empty" << endl;
+	}
+	else
+	{
+		bool found = false;
+		Node * current = first;
 
+		while (current != nullptr) 
+			// !found not part of condition because possible >1 student with last name
+		{
+			if (current->getStudent().getLastName() == lastName)
+			{
+				found = true;
+				current->getStudent().printStudentInfo();
+			}
+			current = current->getNext();
+		}
+		if (!found)
+			cout << "No student with last name " << lastName << " is in the list." << endl;
+	}		
+}
 
 
 // printStudentsOnHold
@@ -85,4 +112,7 @@ void StudentList::destroyStudentList()
 }
 
 // destructor
-
+StudentList::~StudentList() 
+{
+	destroyStudentList();
+}
