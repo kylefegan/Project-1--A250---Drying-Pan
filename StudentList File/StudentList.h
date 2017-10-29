@@ -64,9 +64,6 @@ public:
 	// printAllStudents
 
 
-	// printStudentsToFile
-
-
 	// destroyStudentList
 	void destroyStudentList();
 
