@@ -17,8 +17,11 @@ Currently working on Part C:  DUE SUNDAY @MIDNIGHT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Status:**
 printStudentsByCourse() doesn't have tuition rate as a parameter.
+
 This leads me to believe it is supposed to call printStudentInfo() and
-not printStudentInfo(double tuitionRate). Not sure if this is correct.
+not printStudentInfo(double tuitionRate). 
+
+Not sure if this is correct.
 
 ### Matt Ngo:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
