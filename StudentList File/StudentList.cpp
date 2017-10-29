@@ -64,10 +64,13 @@ void StudentList::printStudentByCourse(const string& courseNumber) const
 		bool found = false;
 		while (current != nullptr)
 		{
-			if (current->getStudent().isEnrolledInCourse(courseNumber))
+			if (current->getStudent.getNumberOfCourses() > 0)
 			{
-				current->getStudent().printStudentInfo();
-				if (!found) found = true;
+				if (current->getStudent().isEnrolledInCourse(courseNumber))
+				{
+					current->getStudent().printStudentInfo();
+					if (!found) found = true;
+				}
 			}
 			current = current->getNext();
 		}
