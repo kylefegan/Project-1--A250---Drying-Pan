@@ -22,7 +22,7 @@ Currently working on Part C:  DUE SUNDAY @MIDNIGHT
 This leads me to believe it is supposed to call **printStudentInfo()** and
 not **printStudentInfo(double tuitionRate)**. 
 
-Not sure if this is correct.
+Not sure if this is correct, even though it follows the directions.
 
 ### Matt Ngo:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
