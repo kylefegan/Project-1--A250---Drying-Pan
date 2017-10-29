@@ -55,7 +55,25 @@ void StudentList::printStudentByID(int idNum, double tuitionRate) const
 
 
 // printStudentsByCourse
-
+void StudentList::printStudentByCourse(const string& courseNumber) const
+{
+	if (count == 0) cerr << "List is empty" << endl;
+	else
+	{
+		Node* current = first;
+		bool found = false;
+		while (current != nullptr)
+		{
+			if (current->getStudent().isEnrolledInCourse(courseNumber))
+			{
+				current->getStudent().printStudentInfo();
+				if (!found) found = true;
+			}
+			current = current->getNext();
+		}
+		if (!found) cout << "No student enrolled in " << courseNumber << endl;
+	}
+}
 
 
 // printStudentByName
