@@ -59,7 +59,7 @@ public:
 	void printStudentByName(const string& lastName) const;
 
 	// printStudentsOnHold
-	void printStudentsOnHold(double tuition) const;
+	void printStudentsOnHold(double tuitionRate) const;
 
 	// printAllStudents
 	void printAllStudents(double tuitionRate) const;
