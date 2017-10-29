@@ -41,10 +41,10 @@ class StudentList
 public:
 
 	// default constructor
-
+	StudentList();
 
 	// addStudent
-
+	void addStudent(Student& object);
 
 	// getNoOfStudents
 	int getNoOfStudents() const;
@@ -59,7 +59,7 @@ public:
 	void printStudentByName(const string& lastName) const;
 
 	// printStudentsOnHold
-
+	void printStudentsOnHold(double tuition) const;
 
 	// printAllStudents
 
