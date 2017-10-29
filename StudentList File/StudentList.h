@@ -53,7 +53,7 @@ public:
 	void printStudentByID(int idNum, double tuitionRate) const;
 
 	// printStudentsByCourse
-
+	void printStudentsByCourse(const string& courseNumber) const;
 
 	// printStudentByName
 	void printStudentByName(const string& lastName) const;
@@ -62,7 +62,7 @@ public:
 	void printStudentsOnHold(double tuition) const;
 
 	// printAllStudents
-
+	void printAllStudents(double tuitionRate) const;
 
 	// destroyStudentList
 	void destroyStudentList();
