@@ -94,10 +94,6 @@ void StudentList::printStudentByName(const string& lastName) const
 
 
 
-// printStudentsToFile
-
-
-
 // destroyStudentList
 void StudentList::destroyStudentList()
 {
