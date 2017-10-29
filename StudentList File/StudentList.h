@@ -50,7 +50,7 @@ public:
 	int getNoOfStudents() const;
 
 	// printStudentByID
-
+	void printStudentByID(int idNum, double tuitionRate) const;
 
 	// printStudentsByCourse
 
@@ -68,7 +68,7 @@ public:
 
 
 	// destroyStudentList
-	
+	void destroyStudentList();
 
 	// destructor
 	~StudentList();
