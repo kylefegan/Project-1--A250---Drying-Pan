@@ -112,7 +112,19 @@ void StudentList::printStudentByName(const string& lastName) const
 
 
 // printAllStudents
-
+void StudentList::printAllStudents(double tuitionRate) const
+{
+	if (count == 0) cerr << "List is empty" << endl;
+	else
+	{
+		Node* current = first;
+		while (current != nullptr)
+		{
+			if (current->getStudent().getID() == idNum) current->getStudent().printStudentInfo(tuitionRate);
+			current = current->getNext();
+		}
+	}
+}
 
 
 // destroyStudentList
