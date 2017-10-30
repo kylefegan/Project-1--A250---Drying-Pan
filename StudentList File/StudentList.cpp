@@ -120,7 +120,29 @@ void StudentList::printStudentByName(const string& lastName) const
 // printStudentsOnHold
 void StudentList::printStudentsOnHold(double tuitionRate)
 {
-
+	if(count == 0)
+	{
+		cerr << "List is empty." << endl;
+	}
+	else
+	{
+		bool found = false;
+		Node* current = first;
+		while(current != nullptr)
+		{
+			if(!current->getStudent().isTuitionPaid())
+			{
+				current->getStudent().printStudentInfo();
+				cout << "\t Amount Due: $" << current->getStudent().billingAmount(tuitionRate) << endl;
+				found = true;
+			}
+			current = current->getNext();
+		}
+		if(!found)
+		{
+			cout << "There are no students on hold." << endl;
+		}
+	}
 }
 
 
