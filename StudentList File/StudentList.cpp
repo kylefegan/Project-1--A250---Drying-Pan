@@ -16,11 +16,21 @@
 
 
 // default constructor
-
+StudentList::StudentList()
+{
+	count = 0;
+	first = nullptr;
+	last = nullptr;
+}
 
 
 // addStudent
-
+void StudentList::addStudent(Student& object)
+{
+	Node * current = new node(object, first);
+	first = current;
+	count++:
+}
 
 
 // getNoOfStudents
@@ -108,7 +118,10 @@ void StudentList::printStudentByName(const string& lastName) const
 
 
 // printStudentsOnHold
+void StudentList::printStudentsOnHold(double tuitionRate)
+{
 
+}
 
 
 // printAllStudents
