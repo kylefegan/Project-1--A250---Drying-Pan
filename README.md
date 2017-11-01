@@ -1,10 +1,13 @@
 # Project 1 - A250 - Drying Pan
 Project 1 for gernsberger A250 
 
-Currently working on Part C:  DUE SUNDAY @MIDNIGHT
+Currently working on Part D:  DUE SUNDAY (11/5) @MIDNIGHT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - StudentList.h
 - StudentList.cpp
+- Student.h
+- Student.cpp
+- Main.cpp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -12,38 +15,32 @@ Currently working on Part C:  DUE SUNDAY @MIDNIGHT
 
 ### Kyle Fegan:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- printStudentsByCourse()
-- printAllStudents()
+- StudentList Class
+- printStudentsToFile()
+- printStudentInfoToFile()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Status:**
 
-**printStudentsByCourse()** doesn't have tuition rate as a parameter.
-
-This leads me to believe it is supposed to call **printStudentInfo()** and
-not **printStudentInfo(double tuitionRate)**. 
-
-Not sure if this is correct, even though it follows the directions.
-
 ### Matt Ngo:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- getNoOfStudents()
-- printStudentsByName()
-- Destructor
+- Student Class
+- printStudentsToFile()
+- printStudentInfoToFile()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Status:**
 
 ### Andre Cortes:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- printStudentsByID()
-- destroyStudentList()
+- Main.cpp
+- do/while for Switch
+- Error Message
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Status:**
 
 ### Tristan Manning:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Default constructor
-- addStudent()
-- printStudentsOnHold()
+- Fuck all
+- Motivational comments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Status:**
 
