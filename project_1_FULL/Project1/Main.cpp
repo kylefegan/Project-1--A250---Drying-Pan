@@ -134,7 +134,7 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 			break;
 			}
 		}
-	} while (choice != 7)
+	
 		
 		system("Pause");
 		displayMenu();
@@ -142,5 +142,6 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 		cout << "\nEnter your choice: ";
 		cin >> choice;
 		cout << endl;
-	}
+	} while (choice != 7);
+
 }
