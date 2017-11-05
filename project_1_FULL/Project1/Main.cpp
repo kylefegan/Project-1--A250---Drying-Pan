@@ -45,7 +45,7 @@ void displayMenu()
 	cout << "    3: Search student by last name" << endl;
 	cout << "    4: Print students by course" << endl;
 	cout << "    5: Print students on hold" << endl;
-	cout << "    6: To exit" << endl;
+	cout << "    6: Print students to file" << endl;
 
 }
 
@@ -113,6 +113,13 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 			studentList.printStudentsOnHold(tuitionRate);
 			cout << endl;
 
+			break;
+				
+			// Print students to file
+		case 6:
+			studentList.printStudentsToFile(outp, tuitionRate);
+			cout << endl;
+				
 			break;
 
 			// Incorrect selection
