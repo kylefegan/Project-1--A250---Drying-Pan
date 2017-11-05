@@ -42,7 +42,8 @@ public:
 	// destructor
 	~Person();
 
-private:
+//private:
+protected:
 	string lastName;
 	string firstName;
 };
