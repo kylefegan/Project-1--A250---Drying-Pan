@@ -158,7 +158,7 @@ void Student::printStudentInfoToFile(ofstream& out, double tuitionRate)
 	//Name
 	out << "Student Name: ";
 		//"out" version of	  printName();
-		//changed lastName and firstName to "protected:" in Person.h, check if correct
+		//changed lastName and firstName to "protected:" in Person.h for child accessability, check if correct
 	out << lastName << ", " << firstName << endl;
 	out << endl;
 
