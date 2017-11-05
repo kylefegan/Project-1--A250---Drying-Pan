@@ -40,10 +40,6 @@ int StudentList::getNoOfStudents() const
 // printStudentByID
 void StudentList::printStudentByID(int idNum, double tuitionRate) const
 {
-	if (count == 0)
-		cerr << "List is empty" << endl;
-	else
-	{
 		Node* current = first;
 		bool found = false;
 		while (current != nullptr && !found)
@@ -57,15 +53,11 @@ void StudentList::printStudentByID(int idNum, double tuitionRate) const
 		}
 		if (!found)
 			cout << "No student with ID " << idNum << " found in list" << endl;
-	}
 }
 
 // printStudentsByCourse
 void StudentList::printStudentsByCourse(const string& courseNumber) const
 {
-	if (count == 0) cerr << "List is empty" << endl;
-	else
-	{
 		Node* current = first;
 		bool found = false;
 		while (current != nullptr)
@@ -78,18 +70,11 @@ void StudentList::printStudentsByCourse(const string& courseNumber) const
 			current = current->getNext();
 		}
 		if (!found) cout << "No student enrolled in " << courseNumber << endl;
-	}
 }
 
 // printStudentByName
 void StudentList::printStudentByName(const string& lastName) const
 {
-	if (count == 0)
-	{
-		cerr << "List is empty" << endl;
-	}
-	else
-	{
 		bool found = false;
 		Node * current = first;
 
@@ -104,20 +89,13 @@ void StudentList::printStudentByName(const string& lastName) const
 			current = current->getNext();
 		}
 		if (!found)
-			cout << "No student with last name " << lastName << " is in the list." << endl;
-	}		
+			cout << "No student with last name " << lastName << " is in the list." << endl;		
 }
 
 
 // printStudentsOnHold
 void StudentList::printStudentsOnHold(double tuitionRate) const
 {
-	if (count == 0)
-	{
-		cerr << "List is empty." << endl;
-	}
-	else
-	{
 		bool found = false;
 		Node* current = first;
 		while (current != nullptr)
@@ -131,26 +109,18 @@ void StudentList::printStudentsOnHold(double tuitionRate) const
 			current = current->getNext();
 		}
 		if (!found)
-		{
-			cout << "There are no students on hold." << endl;
-		}
-	}
+		cout << "There are no students on hold." << endl;
 }
 
 // printAllStudents
 void StudentList::printAllStudents(double tuitionRate) const
 {
-	if (count == 0) 
-		cerr << "List is empty" << endl;
-	else
-	{
 		Node* current = first;
 		while (current != nullptr)
 		{
 			current->getStudent().printStudentInfo(tuitionRate);
 			current = current->getNext();
 		}
-	}
 }
 
 // printStudentsToFile
