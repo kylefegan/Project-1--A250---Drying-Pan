@@ -2,7 +2,7 @@
 Project 1 for gernsberger A250 
 
 Currently working on Part D:  DUE SUNDAY (11/5) @MIDNIGHT
-# UPLOAD ALL CHANGES TO "project_1_FULL" FOLDER
+## UPLOAD ALL CHANGES TO "project_1_FULL" FOLDER
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - StudentList.h
 - StudentList.cpp
