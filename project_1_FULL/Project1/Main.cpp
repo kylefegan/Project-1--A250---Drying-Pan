@@ -60,75 +60,82 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 
 	cout << fixed << showpoint << setprecision(2); 
 
-	while (choice != 6)
+	do
 	{
 		string fName, lName;
+		ofstream outp;
 		int ssn = 0;
 		double donation = 0.0;
-
-		switch(choice)
+		if (choice == 7)
+			cout << "Thank you for using the OCC Gradebook. Good bye!" << endl;
+		else
 		{
+			switch(choice)
+			{
 			
-			// Print all students
-		case 1: 
-			studentList.printAllStudents(tuitionRate);
-
-			break;
-
-			// Print student information
-		case 2: 
-			cout << "Please enter student's ID: ";			
-			cin >> id;
-			cout << endl;
 			
-			studentList.printStudentByID(id, tuitionRate);
-			cout << endl;
+				// Print all students
+			case 1:
+				if (studentList.getNoOFStudents() > 0)studentList.printAllStudents(tuitionRate);
+				else cout << "There are no student in the list " << endl;
+				break;
 
-			break;
+				// Print student information
+			case 2:
+				cout << "Please enter student's ID: ";
+				cin >> id;
+				cout << endl;
 
-			// Search student by last name
-		case 3: 
-			cout << "Please enter the student's last name: ";			
-			cin >> lastName;
-			cout << endl;
+				if (studentList.getNoOFStudents() > 0)studentList.printAllStudents(tuitionRate);
+				else cout << "There are no student in the list " << endl;
 
-			studentList.printStudentByName(lastName);
-			cout << endl; 
-				
-			break;
+				break;
 
-			// Print students by course 
-		case 4:
-			cout << "Please enter the course number: ";			
-			cin >> courseNumber;
-			cout << endl;
+				// Search student by last name
+			case 3:
+				cout << "Please enter the student's last name: ";
+				cin >> lastName;
+				cout << endl;
 
-			studentList.printStudentsByCourse(courseNumber);
-			cout << endl;
+				if (studentList.getNoOFStudents() > 0)studentList.printAllStudents(tuitionRate);
+				else cout << "There are no student in the list " << endl;
 
-			break;
-						
-			// Print students on hold
-		case 5: 
-			studentList.printStudentsOnHold(tuitionRate);
-			cout << endl;
+				break;
 
-			break;
-				
-			// Print students to file
-		case 6:
-			studentList.printStudentsToFile(outp, tuitionRate);
-			cout << endl;
+				// Print students by course 
+			case 4:
+				cout << "Please enter the course number: ";
+				cin >> courseNumber;
+				cout << endl;
+
+				if (studentList.getNoOFStudents() > 0)studentList.printAllStudents(tuitionRate);
+				else cout << "There are no student in the list " << endl;
+
+				break;
+
+				// Print students on hold
+			case 5:
+				if (studentList.getNoOFStudents() > 0)studentList.printAllStudents(tuitionRate);
+				else cout << "There are no student in the list " << endl;
+
+				break;
+
+				// Print students to file
+			case 6:
+				if (studentList.getNoOFStudents() > 0)studentList.printStudentsToFile(outp, tuitionRate);
+				else cout << "There are no student in the list " << endl;
 				
 			break;
 
 			// Incorrect selection
-		default: 
-			cout << "\nSorry. That is not a selection." << endl;
+			default: 
+				cout << "\nSorry. That is not a selection." << endl;
 
 			break;
+			}
 		}
-
+	} while (choice != 7)
+		
 		system("Pause");
 		displayMenu();
 
