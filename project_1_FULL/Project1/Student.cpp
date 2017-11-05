@@ -152,5 +152,47 @@ vector<Course> Student::getCoursesEnrolled()
 	return coursesEnrolled;
 }
 
+//same as printStudentInfo but cout->out, no print funcs available
+void Student::printStudentInfoToFile(ofstream& out, double tuitionRate)
+{
+	//Name
+	out << "Student Name: ";
+		//"out" version of	  printName();
+		//changed lastName and firstName to "protected:" in Person.h, check if correct
+	out << lastName << ", " << firstName << endl;
+	out << endl;
+
+	//ID & Enrolled Courses
+	out << "Student ID: " << getID() << endl;
+	out << "Number of courses enrolled: " << getNumberOfCourses() << endl << endl;
+
+	//Course List
+	out << "Course No  Course Name  Credits Grade" << endl;
+
+	for (auto currentCourse : coursesEnrolled)
+	{
+			//"out" version of	  currentCourse.printCourseInfo(isTuitionPaid());
+			//courseNo, courseName, courseCredits, courseGrade changed to get...() funcs
+		out << left << setw(11) << currentCourse.getCourseNumber() << setw(17) << currentCourse.getCourseName() << currentCourse.getCourseCredits();
+		if (tuitionWasPaid)
+			out << right << setw(7) << currentCourse.getCourseGrade() << endl;
+		else
+			out << right << setw(7) << "***" << endl;
+	}
+	out << endl;
+
+	//Credit Hours & GPA
+	out << "Total number of credit hours: " << getCreditsEnrolled() << endl;
+	if (isTuitionPaid()) out << "Current Term GPA: " << getGpa() << endl;
+	else
+	{
+		out << "*** Grades are being held for not paying the tuition. ***" << endl;
+		out << "Amount Due: $" << billingAmount(tuitionRate) << endl;
+	}
+
+	//Footer
+	out << endl << "-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-" << endl << endl;
+}
+
 // destructor
 Student::~Student() {}
