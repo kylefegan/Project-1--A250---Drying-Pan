@@ -66,6 +66,8 @@ public:
 
 	//getCoursesEnrolled
 	vector<Course> getCoursesEnrolled();
+	
+	void printStudentInfoToFile(ofstream& out, double tuitionRate);
 
 	//Destructor
 	~Student();
