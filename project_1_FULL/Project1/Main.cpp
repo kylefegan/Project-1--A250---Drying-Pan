@@ -76,7 +76,7 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 			
 				// Print all students
 			case 1:
-				if (studentList.getNoOFStudents() > 0)studentList.printAllStudents(tuitionRate);
+				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
 				else cout << "There are no student in the list " << endl;
 				break;
 
@@ -86,7 +86,7 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 				cin >> id;
 				cout << endl;
 
-				if (studentList.getNoOFStudents() > 0)studentList.printAllStudents(tuitionRate);
+				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
 				else cout << "There are no student in the list " << endl;
 
 				break;
@@ -97,7 +97,7 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 				cin >> lastName;
 				cout << endl;
 
-				if (studentList.getNoOFStudents() > 0)studentList.printAllStudents(tuitionRate);
+				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
 				else cout << "There are no student in the list " << endl;
 
 				break;
@@ -108,21 +108,21 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 				cin >> courseNumber;
 				cout << endl;
 
-				if (studentList.getNoOFStudents() > 0)studentList.printAllStudents(tuitionRate);
+				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
 				else cout << "There are no student in the list " << endl;
 
 				break;
 
 				// Print students on hold
 			case 5:
-				if (studentList.getNoOFStudents() > 0)studentList.printAllStudents(tuitionRate);
+				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
 				else cout << "There are no student in the list " << endl;
 
 				break;
 
 				// Print students to file
 			case 6:
-				if (studentList.getNoOFStudents() > 0)studentList.printStudentsToFile(outp, tuitionRate);
+				if (studentList.getNoOfStudents() > 0)studentList.printStudentsToFile(outp, tuitionRate);
 				else cout << "There are no student in the list " << endl;
 				
 			break;
