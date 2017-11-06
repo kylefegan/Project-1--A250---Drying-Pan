@@ -124,7 +124,15 @@ void StudentList::printAllStudents(double tuitionRate) const
 }
 
 // printStudentsToFile
-
+void StudentList::printStudentsToFile(ofstream& outp, double tuitionRate) const
+{
+	Node* current = first;
+	while (current != nullptr)
+	{
+		current->getStudent().printStudentInfoToFile(outp, tuitionRate);
+		current = current->getNext();
+	}
+}
 
 
 // destroyStudentList
