@@ -22,6 +22,8 @@ Currently working on Part D:  DUE SUNDAY (11/5) @MIDNIGHT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Status:**
 
+Done, not sure if the main.cpp is finalized though. Everything compiles but I think the file we're printing to may be undeclared?
+
 ### Matt Ngo:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Student Class
