@@ -35,7 +35,7 @@ public:
 	Student() : studentID(0), numberOfCourses(0), tuitionWasPaid(false) {}
 
 	//setStudentInfo
-	void setStudentInfo(const string& first, const string& last, int idNum, bool paidTuition, vector<Course>& studentClass);
+	void setStudentInfo(const string& first, const string& last, int idNum, bool paidTuition, const vector<Course>& studentClass);
 
 	//getID
 	int getID() const;
@@ -67,6 +67,7 @@ public:
 	//getCoursesEnrolled
 	vector<Course> getCoursesEnrolled();
 	
+	//printStudentInfoToFile
 	void printStudentInfoToFile(ofstream& out, double tuitionRate);
 
 	//Destructor
@@ -76,7 +77,7 @@ private:
 	int studentID;
 	int numberOfCourses;
 	bool tuitionWasPaid;
-	vector<Course> coursesEnrolled;
+	const vector<Course> coursesEnrolled;
 };
 
 #endif
