@@ -17,6 +17,14 @@ Project 1
 #include <string>
 #include <vector>
 
+//default constructor
+Student::Student()
+{
+	studentID = 0;
+	numberOfCourses = 0;
+	tuitionWasPaid = false;
+}
+
 // setStudentInfo
 void Student::setStudentInfo(const string& first, const string& last, int idNum, bool paidTuition, const vector<Course>& studentClass)
 {
