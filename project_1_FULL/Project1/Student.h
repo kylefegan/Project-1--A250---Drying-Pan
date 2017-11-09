@@ -50,7 +50,7 @@ public:
 	bool isTuitionPaid() const;
 
 	//isEnrolledInCourse
-	bool isEnrolledInCourse(const string& course);
+	bool isEnrolledInCourse(const string& course) const;
 
 	//getGpa
 	double getGpa() const;
@@ -65,10 +65,10 @@ public:
 	void printStudentInfo(double tuition) const;
 
 	//getCoursesEnrolled
-	vector<Course> getCoursesEnrolled();
+	vector<Course> getCoursesEnrolled() const;
 	
 	//printStudentInfoToFile
-	void printStudentInfoToFile(ofstream& out, double tuitionRate);
+	void printStudentInfoToFile(ofstream& out, double tuitionRate) const;
 
 	//Destructor
 	~Student();
