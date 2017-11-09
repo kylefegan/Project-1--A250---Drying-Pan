@@ -18,7 +18,7 @@ Project 1
 #include <vector>
 
 // setStudentInfo
-void Student::setStudentInfo(const string& first, const string& last, int idNum, bool paidTuition, vector<Course>& studentClass)
+void Student::setStudentInfo(const string& first, const string& last, int idNum, bool paidTuition, const vector<Course>& studentClass)
 {
 	setName(first, last);
 	studentID = idNum;
