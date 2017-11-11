@@ -44,7 +44,7 @@ public:
 	StudentList();
 
 	// addStudent
-	void addStudent(Student& object);
+	void addStudent(const Student& object);
 
 	// getNoOfStudents
 	int getNoOfStudents() const;
