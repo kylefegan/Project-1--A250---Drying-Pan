@@ -1,15 +1,15 @@
-/*
-Drying Pan
+/************************
+	Drying Pan
 
-Ngo, Matthew
-Fegan, Kyle
-Manning, Tristan
-Cortes, Andre
+	Ngo, Matthew
+	Fegan, Kyle
+	Manning, Tristan
+	Cortes, Andre
 
-CS A250 - Fall 2017
+	CS A250 - Fall 2017
 
-Project 1
-*/
+	Project 1
+*************************/
 
 #ifndef STUDENTLIST_H
 #define STUDENTLIST_H
