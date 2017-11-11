@@ -13,6 +13,8 @@ Project 1
 
 #include "Person.h"
 
+//Default and overloaded constructors defined in Person.h
+
 // setName
 void Person::setName(const string & first, const string & last)
 {
@@ -27,7 +29,7 @@ string Person::getLastName() const
 }
 
 // getName
-void Person::getName(string & first, string & last)
+void Person::getName(string & first, string & last) const
 {
 	first = firstName;
 	last = lastName;
