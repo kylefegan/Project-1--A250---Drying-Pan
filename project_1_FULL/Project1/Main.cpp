@@ -71,13 +71,11 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 		else
 		{
 			switch(choice)
-			{
-			
-			
+			{		
 				// Print all students
 			case 1:
 				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
-				else cout << "There are no student in the list " << endl;
+				else cerr << "There are no student in the list " << endl;
 				break;
 
 				// Print student information
@@ -87,7 +85,7 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 				cout << endl;
 
 				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
-				else cout << "There are no student in the list " << endl;
+				else cerr << "There are no student in the list " << endl;
 
 				break;
 
@@ -98,7 +96,7 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 				cout << endl;
 
 				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
-				else cout << "There are no student in the list " << endl;
+				else cerr << "There are no student in the list " << endl;
 
 				break;
 
@@ -109,21 +107,21 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 				cout << endl;
 
 				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
-				else cout << "There are no student in the list " << endl;
+				else cerr << "There are no student in the list " << endl;
 
 				break;
 
 				// Print students on hold
 			case 5:
 				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
-				else cout << "There are no student in the list " << endl;
+				else cerr << "There are no student in the list " << endl;
 
 				break;
 
 				// Print students to file
 			case 6:
 				if (studentList.getNoOfStudents() > 0)studentList.printStudentsToFile(outp, tuitionRate);
-				else cout << "There are no student in the list " << endl;
+				else cerr << "There are no student in the list " << endl;
 				
 			break;
 
@@ -134,7 +132,6 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 			break;
 			}
 		}
-	
 		
 		system("Pause");
 		displayMenu();
