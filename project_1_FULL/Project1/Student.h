@@ -1,4 +1,4 @@
-/*
+/************************
 	Drying Pan
 
 	Ngo, Matthew
@@ -9,7 +9,7 @@
 	CS A250 - Fall 2017
 
 	Project 1
-*/
+*************************/
 
 #ifndef STUDENT_H
 #define STUDENT_H
