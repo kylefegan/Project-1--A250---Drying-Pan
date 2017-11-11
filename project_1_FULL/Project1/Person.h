@@ -1,14 +1,15 @@
-/*
+/************************
+	Drying Pan
+
 	Ngo, Matthew
 	Fegan, Kyle
 	Manning, Tristan
 	Cortes, Andre
 
-	CS A250
-	September 29, 2017
+	CS A250 - Fall 2017
 
 	Project 1
-*/
+*************************/
 
 #ifndef PERSON_H
 #define PERSON_H
