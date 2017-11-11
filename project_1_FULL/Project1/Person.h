@@ -23,9 +23,11 @@ class Person
 {
 public:
 
-	// constructors
+	// Default constructor
 	Person() : lastName("N/A"), firstName("N/A") {}
-	Person(string last, string first) : lastName(last), firstName(first) {}
+
+	// Overloaded constructor
+	Person(const string& last, const string& first) : lastName(last), firstName(first) {}
 
 	// setName
 	void setName(const string & first, const string & last);
@@ -34,7 +36,7 @@ public:
 	string getLastName() const;
 
 	// getName
-	void getName(string & first, string & last);
+	void getName(string & first, string & last) const;
 
 	// printName
 	void printName() const;
