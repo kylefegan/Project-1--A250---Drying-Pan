@@ -1,18 +1,36 @@
 # Project 1 - A250 - Drying Pan
 Project 1 for gernsberger A250 
 
-Currently working on Part D:  DUE SUNDAY (11/5) @MIDNIGHT
+Currently working on Part E: Final Submission (11/12) @MIDNIGHT
 ## UPLOAD ALL CHANGES TO "project_1_FULL" FOLDER
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- StudentList.h
-- StudentList.cpp
-- Student.h
-- Student.cpp
-- Main.cpp
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 # Tasks:
+
+### Everyone:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- NO horizontal scrolling (keep all statements short enough)
+- There is a space before and after ALL operators
+- All code is properly indented.
+- There is a line in between functions (both declarations and definitions).
+- All variables and objects have a descriptive identifier.
+- All variables and objects use the camelCase convention.
+- Updated name header format for all files:
+
+/************************
+	Drying Pan
+
+	Ngo, Matthew
+	Fegan, Kyle
+	Manning, Tristan
+	Cortes, Andre
+
+	CS A250 - Fall 2017
+
+	Project 1
+*************************/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Kyle Fegan:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -25,24 +43,19 @@ Currently working on Part D:  DUE SUNDAY (11/5) @MIDNIGHT
 
 ### Matt Ngo:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Student Class
-- printStudentsToFile()
-- printStudentInfoToFile()
+- Person Class Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Status:**
 
 ### Andre Cortes:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Main.cpp
-- do/while for Switch
-- Error Message
+- 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Status:**
 
 ### Tristan Manning:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Fuck all
-- Motivational comments
+- 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Status:**
 
