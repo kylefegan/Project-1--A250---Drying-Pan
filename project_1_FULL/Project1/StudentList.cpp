@@ -52,7 +52,7 @@ void StudentList::printStudentByID(int idNum, double tuitionRate) const
 			current = current->getNext();
 		}
 		if (!found)
-			cout << "No student with ID " << idNum << " found in list" << endl;
+			cout << "No student with ID " << idNum << " found in the list." << endl;
 }
 
 // printStudentsByCourse
