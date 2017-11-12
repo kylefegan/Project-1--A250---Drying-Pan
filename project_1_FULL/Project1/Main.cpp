@@ -84,7 +84,7 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 				cin >> id;
 				cout << endl;
 
-				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
+				if (studentList.getNoOfStudents() > 0)studentList.printStudentByID(id, tuitionRate);
 				else cerr << "There are no student in the list " << endl;
 
 				break;
@@ -95,7 +95,7 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 				cin >> lastName;
 				cout << endl;
 
-				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
+				if (studentList.getNoOfStudents() > 0)studentList.printStudentByName(lastName);
 				else cerr << "There are no student in the list " << endl;
 
 				break;
@@ -106,14 +106,14 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 				cin >> courseNumber;
 				cout << endl;
 
-				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
+				if (studentList.getNoOfStudents() > 0)studentList.printStudentsByCourse(courseNumber);
 				else cerr << "There are no student in the list " << endl;
 
 				break;
 
 				// Print students on hold
 			case 5:
-				if (studentList.getNoOfStudents() > 0)studentList.printAllStudents(tuitionRate);
+				if (studentList.getNoOfStudents() > 0)studentList.printStudentsOnHold(tuitionRate);
 				else cerr << "There are no student in the list " << endl;
 
 				break;
