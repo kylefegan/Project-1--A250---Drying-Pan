@@ -23,10 +23,17 @@ StudentList::StudentList()
 }
 
 // addStudent
-void StudentList::addStudent(Student& object)
+void StudentList::addStudent(const Student& newStudent)
 {
-	Node * current = new Node(object, first);
-	first = current;
+	Node *student = new Node(newStudent, first);
+
+	if (first == nullptr)
+	{
+		last = student;
+		first = student;
+	}
+	else
+		first = student;
 	count++;
 }
 
