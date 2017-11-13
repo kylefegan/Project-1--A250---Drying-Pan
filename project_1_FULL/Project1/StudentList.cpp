@@ -60,6 +60,7 @@ void StudentList::printStudentByID(int idNum, double tuitionRate) const
 		}
 		if (!found)
 			cout << "No student with ID " << idNum << " found in the list." << endl;
+	cout << endl;
 }
 
 // printStudentsByCourse
@@ -77,6 +78,7 @@ void StudentList::printStudentsByCourse(const string& courseNumber) const
 			current = current->getNext();
 		}
 		if (!found) cout << "No student enrolled in " << courseNumber << endl;
+	cout << endl;
 }
 
 // printStudentByName
@@ -97,6 +99,7 @@ void StudentList::printStudentByName(const string& lastName) const
 		}
 		if (!found)
 			cout << "No student with last name " << lastName << " is in the list." << endl;		
+	cout << endl;
 }
 
 
@@ -117,6 +120,7 @@ void StudentList::printStudentsOnHold(double tuitionRate) const
 		}
 		if (!found)
 		cout << "There are no students on hold." << endl;
+	cout << endl;
 }
 
 // printAllStudents
@@ -139,6 +143,7 @@ void StudentList::printStudentsToFile(ofstream& outp, double tuitionRate) const
 		current->getStudent().printStudentInfoToFile(outp, tuitionRate);
 		current = current->getNext();
 	}
+	cout << endl;
 }
 
 
