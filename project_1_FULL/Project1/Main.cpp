@@ -46,6 +46,7 @@ void displayMenu()
 	cout << "    4: Print students by course" << endl;
 	cout << "    5: Print students on hold" << endl;
 	cout << "    6: Print students to file" << endl;
+	cout << "    7: To exit" << endl;
 
 }
 
@@ -131,14 +132,13 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 
 			break;
 			}
-		}
-		
-		system("Pause");
-		displayMenu();
+			system("Pause");
+			displayMenu();
 
-		cout << "\nEnter your choice: ";
-		cin >> choice;
-		cout << endl;
+			cout << "\nEnter your choice: ";
+			cin >> choice;
+			cout << endl;
+		}
 	} while (choice != 7);
 
 }
