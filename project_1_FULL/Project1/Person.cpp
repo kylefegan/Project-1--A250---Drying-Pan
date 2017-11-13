@@ -16,7 +16,7 @@
 //Default and overloaded constructors defined in Person.h
 
 // setName
-void Person::setName(const string & first, const string & last)
+void Person::setName(const string& first, const string& last)
 {
 	firstName = first;
 	lastName = last;
@@ -29,7 +29,7 @@ string Person::getLastName() const
 }
 
 // getName
-void Person::getName(string & first, string & last) const
+void Person::getName(string& first, string& last) const
 {
 	first = firstName;
 	last = lastName;
