@@ -31,13 +31,13 @@ public:
 	Person(const string& last, const string& first) : lastName(last), firstName(first) {}
 
 	// setName
-	void setName(const string & first, const string & last);
+	void setName(const string& first, const string& last);
 
 	// getLastName
 	string getLastName() const;
 
 	// getName
-	void getName(string & first, string & last) const;
+	void getName(string& first, string& last) const;
 
 	// printName
 	void printName() const;
