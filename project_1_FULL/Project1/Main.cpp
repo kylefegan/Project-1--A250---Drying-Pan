@@ -12,7 +12,7 @@
 *************************/
 
 #include "InputHandler.h"
-
+#include "OutputHandler.h"
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -121,7 +121,7 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 
 				// Print students to file
 			case 6:
-				if (studentList.getNoOfStudents() > 0)studentList.printStudentsToFile(outp, tuitionRate);
+				if (studentList.getNoOfStudents() > 0)printAllStudentsToFile(studentList, tuitionRate);
 				else cerr << "There are no student in the list " << endl;
 				
 			break;
