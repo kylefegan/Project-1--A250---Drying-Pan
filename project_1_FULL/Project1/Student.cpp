@@ -110,7 +110,7 @@ double Student::getGpa() const
 // billingAmount
 double Student::billingAmount(double tuitionRate) const
 {
-	return tuitionRate*getCreditsEnrolled();
+	return tuitionRate * getCreditsEnrolled();
 }
 
 // printStudentInfo
@@ -137,7 +137,7 @@ void Student::printStudentInfo(double tuition) const
 	//No need for setw as the header is constant
 	for (auto currentCourse : coursesEnrolled)
 	{
-		currentCourse.printCourseInfo(isTuitionPaid());//coursesEnrolled
+		currentCourse.printCourseInfo(isTuitionPaid()); //coursesEnrolled
 	}
 	cout << endl;
 
