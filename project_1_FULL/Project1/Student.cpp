@@ -190,6 +190,7 @@ void Student::printStudentInfoToFile(ofstream& out, double tuitionRate)
 	out << endl;
 
 	//Credit Hours & GPA
+	out << fixed<< setprecision(2);
 	out << "Total number of credit hours: " << getCreditsEnrolled() << endl;
 	if (isTuitionPaid()) out << "Current Term GPA: " << getGpa() << endl;
 	else
