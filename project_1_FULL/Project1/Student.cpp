@@ -104,7 +104,7 @@ double Student::getGpa() const
 		count++;
 	}
 
-	return gPA / count;
+	return gPA / getCreditsEnrolled();
 }
 
 // billingAmount
