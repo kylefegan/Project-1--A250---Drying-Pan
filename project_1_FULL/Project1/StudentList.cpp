@@ -85,7 +85,7 @@ void StudentList::printStudentsByCourse(const string& courseNumber) const
 void StudentList::printStudentByName(const string& lastName) const
 {
 		bool found = false;
-		Node * current = first;
+		Node* current = first;
 
 		while (current != nullptr) 
 			// !found not part of condition because possible >1 student with last name
@@ -150,7 +150,7 @@ void StudentList::printStudentsToFile(ofstream& outp, double tuitionRate) const
 // destroyStudentList
 void StudentList::destroyStudentList()
 {
-	Node  *temp = first;
+	Node* temp = first;
 	while (first != nullptr)
 	{
 		temp = temp->getNext();
