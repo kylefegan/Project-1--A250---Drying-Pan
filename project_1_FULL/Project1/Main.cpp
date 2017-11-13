@@ -55,10 +55,6 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 	int choice = 0, id = 0;
 	string courseNumber, lastName;
 
-	cout << "\nEnter your choice: ";
-	cin >> choice; 
-	cout << endl;
-
 	cout << fixed << showpoint << setprecision(2); 
 
 	do
@@ -67,6 +63,11 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 		ofstream outp;
 		int ssn = 0;
 		double donation = 0.0;
+		
+		cout << "\nEnter your choice: ";
+		cin >> choice;
+		cout << endl;
+		
 		if (choice == 7)
 			cout << "Thank you for using the OCC Gradebook. Good bye!" << endl;
 		else
@@ -134,10 +135,6 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 			}
 			system("Pause");
 			displayMenu();
-
-			cout << "\nEnter your choice: ";
-			cin >> choice;
-			cout << endl;
 		}
 	} while (choice != 7);
 
