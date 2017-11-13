@@ -33,7 +33,7 @@ public:
 	void setNext(Node *newNext) { next = newNext; }
 private:
     Student student;	
-    Node *next;		
+    Node* next;		
 };
 
 class StudentList
@@ -74,8 +74,8 @@ public:
 	~StudentList();
 
 private:
-	Node *first;
-	Node *last;
+	Node* first;
+	Node* last;
 	int count;
 };
 
