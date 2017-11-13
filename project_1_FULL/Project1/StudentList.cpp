@@ -25,7 +25,7 @@ StudentList::StudentList()
 // addStudent
 void StudentList::addStudent(const Student& newStudent)
 {
-	Node *student = new Node(newStudent, first);
+	Node* student = new Node(newStudent, first);
 
 	if (first == nullptr)
 	{
