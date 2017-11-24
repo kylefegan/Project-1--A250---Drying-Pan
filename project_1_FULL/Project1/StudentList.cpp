@@ -17,88 +17,79 @@
 // default constructor
 StudentList::StudentList()
 {
-	count = 0;
-	first = nullptr;
-	last = nullptr;
+	studentList = new vector<Student>;
 }
 
 // addStudent
 void StudentList::addStudent(const Student& newStudent)
 {
-	Node* student = new Node(newStudent, first);
-
-	if (first == nullptr)
-	{
-		last = student;
-		first = student;
-	}
-	else
-		first = student;
-	count++;
+	studentList->push_back(newStudent);
 }
 
 // getNoOfStudents
 int StudentList::getNoOfStudents() const
 {
-	return count;
+	return static_cast<int>(studentList->size());
 }
 
 
 // printStudentByID
 void StudentList::printStudentByID(int idNum, double tuitionRate) const
 {
-		Node* current = first;
-		bool found = false;
-		while (current != nullptr && !found)
+	auto iter = studentList->cbegin();
+	auto iterEnd = studentList->cend();
+	bool found = false;
+	while (iter != iterEnd && !found)
+	{
+		if(iter->getID() == idNum)
 		{
-			if (current->getStudent().getID() == idNum)
-			{
-				current->getStudent().printStudentInfo(tuitionRate);
-				found = true;
-			}
-			current = current->getNext();
+			iter->printStudentInfo(tuitionRate);
+			found = true;
 		}
-		if (!found)
-			cout << "No student with ID " << idNum << " found in the list." << endl;
+		++iter;
+	}
+	if (!found)
+		cout << "No student with ID " << idNum << " found in the list." << endl;
 	cout << endl;
 }
 
 // printStudentsByCourse
 void StudentList::printStudentsByCourse(const string& courseNumber) const
 {
-		Node* current = first;
-		bool found = false;
-		while (current != nullptr)
+	auto iter = studentList->cbegin();
+	auto iterEnd = studentList->cend();
+	bool found = false;
+
+	for (iter; iter != iterEnd; ++iter)
+	{
+		if (iter->isEnrolledInCourse(courseNumber))
 		{
-			if (current->getStudent().isEnrolledInCourse(courseNumber))
-			{
-				current->getStudent().printStudentInfo();
-				if (!found) found = true;
-			}
-			current = current->getNext();
+			iter->printStudentInfo();
+			if (!found) found = true;
 		}
-		if (!found) cout << "No student enrolled in " << courseNumber << endl;
+	}
+	
+	if (!found) cout << "No student enrolled in " << courseNumber << endl;
 	cout << endl;
 }
 
 // printStudentByName
 void StudentList::printStudentByName(const string& lastName) const
 {
-		bool found = false;
-		Node* current = first;
+	auto iter = studentList->cbegin();
+	auto iterEnd = studentList->cend();
+	bool found = false;
 
-		while (current != nullptr) 
-			// !found not part of condition because possible >1 student with last name
-		{
-			if (current->getStudent().getLastName() == lastName)
+	for (iter; iter != iterEnd; ++iter)
+	{
+		if (iter->getLastName() == lastName)
 			{
 				found = true;
-				current->getStudent().printStudentInfo();
+				iter->printStudentInfo();
 			}
-			current = current->getNext();
-		}
-		if (!found)
-			cout << "No student with last name " << lastName << " is in the list." << endl;		
+	}
+	if (!found)
+		cout << "No student with last name " << lastName << " is in the list." << endl;		
 	cout << endl;
 }
 
@@ -106,42 +97,45 @@ void StudentList::printStudentByName(const string& lastName) const
 // printStudentsOnHold
 void StudentList::printStudentsOnHold(double tuitionRate) const
 {
-		bool found = false;
-		Node* current = first;
-		while (current != nullptr)
+	auto iter = studentList->cbegin();
+	auto iterEnd = studentList->cend();
+	bool found = false;
+	//!found not part of condition because possibile that more than one student same last name
+	for (iter; iter != iterEnd; ++iter)
+	{
+		if (!iter->isTuitionPaid())
 		{
-			if (!current->getStudent().isTuitionPaid())
-			{
-				current->getStudent().printStudentInfo();
-				cout << "\t Amount Due: $" << current->getStudent().billingAmount(tuitionRate) << endl;
-				found = true;
-			}
-			current = current->getNext();
+			iter->printStudentInfo();
+			cout << "\t Amount Due: $" << iter->billingAmount(tuitionRate) << endl;
+			found = true;
 		}
-		if (!found)
-		cout << "There are no students on hold." << endl;
+	}
+	if (!found)
+	cout << "There are no students on hold." << endl;
 	cout << endl;
 }
 
 // printAllStudents
 void StudentList::printAllStudents(double tuitionRate) const
 {
-		Node* current = first;
-		while (current != nullptr)
-		{
-			current->getStudent().printStudentInfo(tuitionRate);
-			current = current->getNext();
-		}
+	auto iter = studentList->cbegin();
+	auto iterEnd = studentList->cend();
+
+	for (iter; iter != iterEnd; ++iter)
+	{
+		iter->printStudentInfo(tuitionRate);
+	}
 }
 
 // printStudentsToFile
 void StudentList::printStudentsToFile(ofstream& outp, double tuitionRate) const
 {
-	Node* current = first;
-	while (current != nullptr)
+	auto iter = studentList->cbegin();
+	auto iterEnd = studentList->cend();
+
+	for (iter; iter != iterEnd; ++iter)
 	{
-		current->getStudent().printStudentInfoToFile(outp, tuitionRate);
-		current = current->getNext();
+		iter->printStudentInfoToFile(outp, tuitionRate);
 	}
 	cout << endl;
 }
@@ -150,14 +144,7 @@ void StudentList::printStudentsToFile(ofstream& outp, double tuitionRate) const
 // destroyStudentList
 void StudentList::destroyStudentList()
 {
-	Node* temp = first;
-	while (first != nullptr)
-	{
-		temp = temp->getNext();
-		delete first;
-		first = nullptr;
-	}
-	count = 0;
+	delete studentList;
 }
 
 
@@ -166,3 +153,4 @@ StudentList::~StudentList()
 {
 	destroyStudentList();
 }
+
