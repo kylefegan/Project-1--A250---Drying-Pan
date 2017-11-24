@@ -18,6 +18,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -74,9 +75,7 @@ public:
 	~StudentList();
 
 private:
-	Node* first;
-	Node* last;
-	int count;
+	vector<Student> * studentList; //pointer named studentList that will point to an STL vector of Student objects
 };
 
 #endif
