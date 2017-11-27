@@ -77,7 +77,7 @@ private:
 	int studentID;
 	int numberOfCourses;
 	bool tuitionWasPaid;
-	const vector<Course> coursesEnrolled;
+	vector<Course> coursesEnrolled;
 };
 
 #endif
