@@ -32,7 +32,7 @@ class Student : public Person
 public:
 
 	//Default constructor   
-	Student() : studentID(0), numberOfCourses(0), tuitionWasPaid(false) {}
+	Student();
 
 	//setStudentInfo
 	void setStudentInfo(const string& first, const string& last, int idNum, bool paidTuition, const vector<Course>& studentClass);
