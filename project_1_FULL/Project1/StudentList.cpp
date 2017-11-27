@@ -69,7 +69,7 @@ void StudentList::printStudentsByCourse(const string& courseNumber) const
 		}
 	}
 	
-	if (!found) cout << "No student enrolled in " << courseNumber << endl;
+	if (!found) cout << "No student enrolled in " << courseNumber << "." << endl;
 	cout << endl;
 }
 
