@@ -67,7 +67,7 @@ bool Student::isTuitionPaid() const
 }
 
 // isEnrolledInCourse
-bool Student::isEnrolledInCourse(const string& course)
+bool Student::isEnrolledInCourse(const string& course) const
 {
 	for (auto currentCourse : coursesEnrolled)
 	{
@@ -155,13 +155,13 @@ void Student::printStudentInfo(double tuition) const
 }
 
 // getCoursesEnrolled
-vector<Course> Student::getCoursesEnrolled()
+vector<Course> Student::getCoursesEnrolled() const
 {
 	return coursesEnrolled;
 }
 
 //same as printStudentInfo but cout->out, no print funcs available
-void Student::printStudentInfoToFile(ofstream& out, double tuitionRate)
+void Student::printStudentInfoToFile(ofstream& out, double tuitionRate) const
 {
 	//Name
 	out << "Student Name: ";
