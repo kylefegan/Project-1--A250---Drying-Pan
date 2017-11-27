@@ -116,7 +116,7 @@ double Student::billingAmount(double tuitionRate) const
 // printStudentInfo
 void Student::printStudentInfo() const
 {
-	cout << getID() << " -- ";
+	cout << getID() << " - ";
 	printName();
 }
 
