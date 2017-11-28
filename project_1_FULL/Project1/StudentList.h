@@ -74,7 +74,7 @@ public:
 	// destructor
 	~StudentList();
 
-private:
+protected:
 	vector<Student> * studentList; //pointer named studentList that will point to an STL vector of Student objects
 };
 
