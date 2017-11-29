@@ -20,6 +20,15 @@ StudentListChild::StudentListChild() {}
 void StudentListChild::printStudentsInOrder() const
 {
 	//Andre
+	
+	//Accessing first and last
+	//==========================================
+	//Declare string tempFirst
+	//Declare string tempLast
+	//Use Person::getName(tempFirst, tempLast) to  change the values of tempFirst and tempLast;
+	//Store tempLast + ", " + tempFirst as the key of the map.
+	//Profit
+	
 }
 
 // destructor
