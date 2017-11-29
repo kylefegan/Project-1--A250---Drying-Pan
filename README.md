@@ -1,4 +1,6 @@
-# Most Valuable Contributor for November 2016: Tristan Manning
+# Most Valuable Contributor for November 2016: 
+
+Tristan Manning
 
 
 # Project 1 - A250 - Drying Pan
