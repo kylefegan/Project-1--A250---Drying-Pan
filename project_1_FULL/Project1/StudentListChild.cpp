@@ -28,7 +28,18 @@ void StudentListChild::printStudentsInOrder() const
 	//Use Person::getName(tempFirst, tempLast) to  change the values of tempFirst and tempLast;
 	//Store tempLast + ", " + tempFirst as the key of the map.
 	//Profit
-	
+	map<string, int> studentMap;
+	string tempFirst, tempLast;
+	//Andre
+	for (auto i : *studentList)
+	{
+		i.getName(tempFirst, tempLast);
+		studentMap.insert(pair<string, int>(tempLast + ", " + tempFirst, i.getID()));
+	}
+		
+	for (auto i : studentMap)
+		cout << i.second << " - " << i.first << endl;
+	cout << endl;
 }
 
 // destructor
