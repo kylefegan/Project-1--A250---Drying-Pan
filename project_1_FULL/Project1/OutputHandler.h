@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void printAllStudentsToFile(const StudentListChild& studentList, double tuitionRate)
+void printAllStudentsToFile(const StudentListChild& studentList, double tuitionRate)		//BEST PROJECT PARTNERS EVER!
 {
 	//Declare stream object
 	ofstream outfile;
@@ -30,3 +30,5 @@ void printAllStudentsToFile(const StudentListChild& studentList, double tuitionR
 
 	studentList.printStudentsToFile(outfile,tuitionRate);
 }
+
+//  :)
