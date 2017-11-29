@@ -21,7 +21,7 @@ void StudentListChild::printStudentsInOrder() const
 {
 	map<string, int> studentMap;
 	string tempFirst, tempLast;
-	//Andre
+	
 	for (auto i : *studentList)
 	{
 		i.getName(tempFirst, tempLast);
