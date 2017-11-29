@@ -1,5 +1,5 @@
 /************************
-	Drying Pan
+	FlavorTown
 
 	Ngo, Matthew
 	Fegan, Kyle
@@ -8,7 +8,7 @@
 
 	CS A250 - Fall 2017
 
-	Project 1
+	Project 2
 *************************/
 
 #include "InputHandler.h"
@@ -24,7 +24,7 @@ void processChoice(const StudentListChild& studentList, double tuitionRate);
 
 int main()
 {
-	StudentListChild studentList;
+	StudentListChild studentList;				//I am so proud of you guys!
 	double tuitionRate = 0.0;
 
 	readStudentData(studentList, tuitionRate);
@@ -46,7 +46,7 @@ void displayMenu()
 	cout << "    4: Print students by course" << endl;
 	cout << "    5: Print students on hold" << endl;
 	cout << "    6: Print students to file" << endl;
-	cout << "    7: Print roster" << endl;
+	cout << "    7: Print roster" << endl;						//Very impressive work!
 	cout << "    8: To exit:" << endl;
 }
 
@@ -141,4 +141,4 @@ void processChoice(const StudentListChild& studentList, double tuitionRate)
 		}
 	} while (choice != 8);
 
-}
+}	//THIS CODE IS SO EFFICIENT!
