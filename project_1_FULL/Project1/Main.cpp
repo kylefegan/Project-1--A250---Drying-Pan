@@ -20,11 +20,11 @@
 using namespace std;
 
 void displayMenu();
-void processChoice(const StudentList& studentList, double tuitionRate);
+void processChoice(const StudentListChild& studentList, double tuitionRate);
 
 int main()
 {
-	StudentList studentList;
+	StudentListChild studentList;
 	double tuitionRate = 0.0;
 
 	readStudentData(studentList, tuitionRate);
@@ -46,11 +46,11 @@ void displayMenu()
 	cout << "    4: Print students by course" << endl;
 	cout << "    5: Print students on hold" << endl;
 	cout << "    6: Print students to file" << endl;
-	cout << "    7: To exit" << endl;
-
+	cout << "    7: Print roster" << endl;
+	cout << "    8: To exit:" << endl;
 }
 
-void processChoice(const StudentList& studentList, double tuitionRate)
+void processChoice(const StudentListChild& studentList, double tuitionRate)
 {
 	int choice = 0, id = 0;
 	string courseNumber, lastName;
@@ -68,7 +68,7 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 		cin >> choice;
 		cout << endl;
 		
-		if (choice == 7)
+		if (choice == 8)
 			cout << "Thank you for using the OCC Gradebook. Good bye!" << endl;
 		else
 		{
@@ -124,9 +124,12 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 			case 6:
 				if (studentList.getNoOfStudents() > 0)printAllStudentsToFile(studentList, tuitionRate);
 				else cerr << "There are no student in the list " << endl;
-				
-			break;
 
+				break;
+			case 7: 
+				if (studentList.getNoOfStudents() > 0)  studentList.printStudentsInOrder();
+				else cerr << "There are no student in the list " << endl;
+				break;
 			// Incorrect selection
 			default: 
 				cout << "\nSorry. That is not a selection." << endl;
@@ -136,6 +139,6 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 			system("Pause");
 			displayMenu();
 		}
-	} while (choice != 7);
+	} while (choice != 8);
 
 }
