@@ -106,7 +106,7 @@ void StudentList::printStudentsOnHold(double tuitionRate) const
 		if (!iter->isTuitionPaid())
 		{
 			iter->printStudentInfo();
-			cout << "\t Amount Due: $" << iter->billingAmount(tuitionRate) << endl;
+			cout << "    Amount Due: $" << iter->billingAmount(tuitionRate) << endl;
 			found = true;
 		}
 	}
