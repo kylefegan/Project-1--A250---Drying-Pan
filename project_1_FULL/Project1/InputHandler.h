@@ -1,6 +1,7 @@
 #include "StudentList.h"
 #include "Course.h"
 #include "Student.h"
+#include "StudentListChild.h"
 
 #include <iostream>
 #include <fstream>
