@@ -1,5 +1,5 @@
 /************************
-	Drying Pan
+	FlavorTown
 
 	Ngo, Matthew
 	Fegan, Kyle
@@ -8,7 +8,7 @@
 
 	CS A250 - Fall 2017
 
-	Project 1
+	Project 2
 *************************/
 
 #include "Student.h"
