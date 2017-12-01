@@ -1,14 +1,14 @@
 /************************
-FlavorTown
+	FlavorTown
 
-Ngo, Matthew
-Fegan, Kyle
-Manning, Tristan
-Cortes, Andre
+	Ngo, Matthew
+	Fegan, Kyle
+	Manning, Tristan
+	Cortes, Andre
 
-CS A250 - Fall 2017
+	CS A250 - Fall 2017
 
-Project 2
+	Project 2
 *************************/
 
 #include "StudentListChild.h"
