@@ -19,7 +19,25 @@ public:
 
 	//creates graph
 	void createGraph(const vector<vector<string>>& blueprint);
+	
+	//copy contructor
+	Graph::Graph(const Graph& otherGraph);
 
+	//move constructor
+	Graph(Graph&& otherGraph);
+
+	//assignment operator
+	Graph& operator =(const Graph& otherGraph);
+
+	//move assignment operator
+	Graph& operator =(Graph&& otherGraph);
+
+	//creates graph
+	void createGraph(const vector<vector<string>>& blueprint);
+
+	//destroys Graph
+	void destroyGraph();
+	
 	//destructor
 	//~FrankenGraph();
 
