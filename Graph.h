@@ -34,9 +34,18 @@ public:
 
 	//creates graph
 	void createGraph(const vector<vector<string>>& blueprint);
+	
+	//emptys graph
+	void emptyGraph();
 
 	//destroys Graph
 	void destroyGraph();
+	
+	//insert new vertex
+	void insertVertex(int vertex, const vector<AnyList>& preds, const vector<AnyList>& succs);
+
+	//traverse graph
+	void traverse() const;
 
 	//destructor
 	//~Graph();
