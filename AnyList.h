@@ -31,11 +31,11 @@ public:
 	AnyList();
 	//default constructor
 
-	void insertFront(int);
+	void insertFront(string);
 	//insertFront - Inserts a node to the front of the list.
 	//@param int - Value stored in the node that is inserted.
 
-	void deleteNode(int);
+	void deleteNode(string);
 	//deleteNode - Deletes a node from the list.
 	//@param int - Value stored in the node to be deleted.
 
@@ -53,4 +53,4 @@ private:
 	int count;	      //keeps track of number of nodes in the list
 };
 
-#endif#pragma once
+#endif
