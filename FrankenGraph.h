@@ -1,6 +1,6 @@
 
-#ifndef FRANKENGRAPH_H
-#define FRANKENGRAPH_H
+#ifndef GRAPH_H
+#define GRAPH_H
 
 #include<iostream>
 #include <string>		//Need to include for NULL	
@@ -8,18 +8,18 @@
 #include "AnyList.h"
 using namespace std;
 
-class FrankenGraph
+class Graph
 {
 public:
 	//default constructor
-	FrankenGraph();
+	Graph();
 
 	//overloaded constructor
-	FrankenGraph(int vectorSize);
+	Graph(int vectorSize);
 
 	//creates graph
 	void createGraph(const vector<vector<string>>& blueprint);
-	
+
 	//copy contructor
 	Graph::Graph(const Graph& otherGraph);
 
@@ -37,9 +37,9 @@ public:
 
 	//destroys Graph
 	void destroyGraph();
-	
+
 	//destructor
-	//~FrankenGraph();
+	//~Graph();
 
 private:
 	AnyList **ptrToSucc;
@@ -49,4 +49,3 @@ private:
 };
 
 #endif
-
