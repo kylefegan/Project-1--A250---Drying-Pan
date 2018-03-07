@@ -1,7 +1,7 @@
-#include "FrankenGraph.h"
+#include "Graph.h"
 
 //Default Constructor
-FrankenGraph::FrankenGraph()
+Graph::Graph()
 {
 	verts = 0;
 	capacity = 0;
@@ -10,16 +10,16 @@ FrankenGraph::FrankenGraph()
 }
 
 //Overloaded Constructor
-FrankenGraph::FrankenGraph(int vectorSize)
+Graph::Graph(int vectorSize)
 {
 	verts = vectorSize;
 	capacity = vectorSize * 2;
 	ptrToVerts = new string[capacity];
-	ptrToSucc = new AnyList* [capacity];
+	ptrToSucc = new AnyList*[capacity];
 }
 
 //CreateGraph()
-void FrankenGraph::createGraph(const vector<vector<string>>& blueprint)
+void Graph::createGraph(const vector<vector<string>>& blueprint)
 {
 	int count = 0;
 	for (auto i : blueprint)
@@ -94,7 +94,7 @@ Graph& Graph::operator=(const Graph& otherGraph)
 
 		// start copying
 		int count = 0;
-		while(otherGraph.ptrToSucc[count])
+		while (otherGraph.ptrToSucc[count])
 		{
 			ptrToVerts[count] = otherGraph.ptrToVerts[count];
 			ptrToSucc[count] = otherGraph.ptrToSucc[count];
@@ -110,7 +110,7 @@ Graph& Graph::operator=(const Graph& otherGraph)
 }
 //move assignment operator
 Graph& Graph::operator=(Graph&& otherGraph)
-{	
+{
 	if (this != &otherGraph)
 	{
 		verts = otherGraph.verts;
@@ -156,25 +156,22 @@ void Graph::destroyGraph()
 		cerr << "List is already empty" << endl;
 }
 //destructor
-Graph::~Graph()
+//Graph::~Graph()
+//{
+//	destroyGraph();
+//}
+int main()
 {
-	destroyGraph();
-}
-int main(
-{
-	vector<vector<string>> data =
-	{
-		{"A", "B", "E"},
-		{"B", "C", "D"},
-		{"C", "D"},
-		{"D"},
-		{"E", "D"}
+	vector<vector<string>> data = {
+		{ "A", "B", "E" },
+		{ "B", "C", "D" },
+		{ "C", "D" },
+		{ "D" },
+		{ "E", "D" }
 	};
-
-	FrankenGraph g = FrankenGraph(data.size());
+	Graph g = Graph(data.size());
 	g.createGraph(data);
 
-	
 	system("Pause");
 	return 0;
 }
