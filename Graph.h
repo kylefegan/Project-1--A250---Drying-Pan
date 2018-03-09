@@ -42,10 +42,7 @@ public:
 	void destroyGraph();
 	
 	//insert new vertex
-	void insertVertex(int vertex, const vector<AnyList>& preds, const vector<AnyList>& succs);
-
-	//traverse graph
-	void traverse() const;
+	void insertVertex(const string& vertex, const vector<AnyList>& preds, const vector<AnyList>& succs);
 
 	//destructor
 	//~Graph();
