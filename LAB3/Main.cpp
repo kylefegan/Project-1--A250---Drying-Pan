@@ -215,9 +215,69 @@ void test_insertVertex()
 	cout << "\nGraph1:\n" << g;
 	cout << "\nNew Graph" << endl;
 	g.insertVert(newVert, pred, succ);
+	cout << g << endl;
 
-	cout << g;
+}
+void test_emptyGraph()
+{
+	vector<vector<string>> data3 =
+	{
+		{ "B", "C", "F" },
+		{ "C", "E" },
+		{ "D", "G" },
+		{ "E", "D", "F" },
+		{ "F", "B" },
+	};
+	Graph g = Graph(static_cast<int>(data3.size()));
+	g.createGraph(data3);
+	cout << "/*********************************************************/\n";
+	cout << "     TEST: Empty GRAPH" << endl;
+	cout << "/*********************************************************/\n";
+	cout << "\nGraph1:\n" << g;
+	g.emptyGraph();
+	if (!g.isEmpty())
+	{
+		cout << "This is the new Graph: " << endl;
+		cout << g << endl;
+		cout << "\n\n=> Check address of succesor array (should not be 0)...";
+		cout << "\nGraph1: " << g.addressSucc();
+		cout << "\n\n=> Check address of vertex array (should not be 0)...";
+		cout << "\nGraph1: " << g.addressVerts();
+		cout << "\n\n=> Check number of vertex in array (should not be 0)...";
+		cout << "\nGraph1: " << g.getVerts() << endl;
+	}
+	else
+		cout << "Empty Graph didn't work" << endl;
+}
 
+void test_destroyGraph()
+{
+	vector<vector<string>> data3 =
+	{
+		{ "B", "C", "F" },
+		{ "C", "E" },
+		{ "D", "G" },
+		{ "E", "D", "F" },
+		{ "F", "B" },
+	};
+	Graph g = Graph(static_cast<int>(data3.size()));
+	g.createGraph(data3);
+	cout << "/*********************************************************/\n";
+	cout << "     TEST: DESTROY GRAPH" << endl;
+	cout << "/*********************************************************/\n";
+	cout << "\nGraph1:\n" << g;
+	g.destroyGraph();
+	if (g.isEmpty())
+	{
+		cout << "\nDeleted Graph succesfully" << endl;
+		cout << "\n\n=> Check address of succesor array (should 0)...";
+		cout << "\nGraph1: " << g.addressSucc();
+		cout << "\n\n=> Check address of vertex array (should 0)...";
+		cout << "\nGraph1: " << g.addressVerts();
+		cout << "\n\n=> Check number of vertex in array (should 0)...";
+		cout << "\nGraph1: " << g.getVerts() << endl;
+	}
+	else cout << "Destroy graph did not work" << endl;
 }
 int main()
 {
@@ -227,16 +287,15 @@ int main()
 	//test_moveConstructor();
 	//test_assignmentOperator();
 	//test_moveAssignment();
-	test_insertVertex();
-	
+	//test_insertVertex();
+	//test_destroyGraph();
+	test_emptyGraph();
 
 	cout << "/*********************************************************/\n";
 	cout << "     TEST: DESTROY GRAPH" << endl;
 	cout << "/*********************************************************/\n";
 
-	cout << "/*********************************************************/\n";
-	cout << "     TEST: empty GRAPH" << endl;
-	cout << "/*********************************************************/\n";
+	
 	system("Pause");
 	return 0;
 }
