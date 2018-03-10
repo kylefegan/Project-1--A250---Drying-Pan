@@ -152,24 +152,32 @@ AnyList** Graph::addressVerts() const
 //insert vert
 void Graph::insertVert(const string& newVert, const vector<string>& pred, const vector<string>& succ)
 {
-	int predLength = static_cast<int>(pred.size());
-	int succLength = static_cast<int>(succ.size());
-	verts++;
-	ptrToVerts[verts] = newVert;
-	AnyList *newSucc;
-	newSucc = new AnyList;
-	for (int i = 0; i < succLength; i++)
+	if (verts < capacity)
 	{
-		newSucc->insertFront(succ[i]);
-	}
-	ptrToSucc[verts] = newSucc;
-	for (int i = 0; i < predLength; i++)
-	{
-		for (int j = 0; j < verts; j++)
+		int predLength = static_cast<int>(pred.size());
+		int succLength = static_cast<int>(succ.size());
+		ptrToVerts[verts] = newVert;
+		AnyList *newSucc;
+		newSucc = new AnyList;
+		for (int i = 0; i < succLength; i++)
 		{
-			if (pred[i] == ptrToVerts[j])
-				ptrToSucc[j]->insertFront(newVert);
+			newSucc->insertFront(succ[i]);
 		}
+		ptrToSucc[verts] = newSucc;
+		for (int i = 0; i < predLength; i++)
+		{
+			for (int j = 0; j < verts; j++)
+			{
+				if (pred[i] == ptrToVerts[j])
+					ptrToSucc[j]->insertFront(newVert);
+			}
+		}
+		++verts;
+	}
+	else
+	{
+		cerr << "Attempted to exceed capacity in DArray."<<endl;
+		exit(0);
 	}
 }
 
