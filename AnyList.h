@@ -8,7 +8,7 @@ using namespace std;
 class Node
 {
 public:
-	Node() : data(0), ptrToNext(nullptr) {}
+	Node() : data(""), ptrToNext(nullptr) {}
 	Node(string theData, Node *newPtrToNext)
 		: data(theData), ptrToNext(newPtrToNext) {}
 	Node* getPtrToNext() const { return ptrToNext; }
@@ -27,10 +27,32 @@ private:
 
 class AnyList
 {
+	friend ostream& operator<<(ostream& out, const AnyList& list);
 public:
 	AnyList();
 	//default constructor
 
+	AnyList(const AnyList& otherList);
+	//copy constructor
+
+	AnyList(AnyList&& otherList);
+	//move constuctor
+
+	AnyList& operator=(AnyList&& otherList);
+	//move assignment operator
+
+	AnyList& operator=(const AnyList& otherList);
+	//assignmt operator
+
+	//get first
+	Node* getFirst() const;
+
+	//return address of object
+	const AnyList* addressObject() const;
+
+	//get address of first 
+	const Node* addressFirst() const;
+	
 	void insertFront(string);
 	//insertFront - Inserts a node to the front of the list.
 	//@param int - Value stored in the node that is inserted.
@@ -38,9 +60,6 @@ public:
 	void deleteNode(string);
 	//deleteNode - Deletes a node from the list.
 	//@param int - Value stored in the node to be deleted.
-
-	void print() const;
-	//print const - Prints all values in the list.
 
 	void destroyList();
 	//destroyList - Destroys all nodes in the list.
@@ -53,4 +72,5 @@ private:
 	int count;	      //keeps track of number of nodes in the list
 };
 
-#endif
+#endif#pragma once
+
