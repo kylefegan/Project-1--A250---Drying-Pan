@@ -10,6 +10,7 @@ using namespace std;
 
 class Graph
 {
+	friend ostream& operator<<(ostream& out, const Graph& object);
 public:
 	//default constructor
 	Graph();
@@ -17,11 +18,8 @@ public:
 	//overloaded constructor
 	Graph(int vectorSize);
 
-	//creates graph
-	void createGraph(const vector<vector<string>>& blueprint);
-
 	//copy contructor
-	Graph::Graph(const Graph& otherGraph);
+	Graph(const Graph& otherGraph);
 
 	//move constructor
 	Graph(Graph&& otherGraph);
@@ -31,21 +29,36 @@ public:
 
 	//move assignment operator
 	Graph& operator =(Graph&& otherGraph);
+	
+	//getVets
+	int getVerts() const;
+
+	//is empty
+	bool isEmpty()const;
+
+	//returns address of object
+	const Graph* addressGraph()const;
+
+	//address of ptrToVerts
+	AnyList** addressVerts() const;
+
+	//address of ptrToSucc
+	string* addressSucc() const;
 
 	//creates graph
 	void createGraph(const vector<vector<string>>& blueprint);
-	
-	//emptys graph
+
+	//void insert cert
+	void insertVert(const string& vert, const vector<string>& pred, const vector<string>& succ);
+
+	//empty Graph
 	void emptyGraph();
 
 	//destroys Graph
 	void destroyGraph();
-	
-	//insert new vertex
-	void insertVertex(const string& vertex, const vector<AnyList>& preds, const vector<AnyList>& succs);
 
 	//destructor
-	//~Graph();
+	~Graph();
 
 private:
 	AnyList **ptrToSucc;
