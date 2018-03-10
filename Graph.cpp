@@ -8,47 +8,34 @@ Graph::Graph()
 	ptrToVerts = nullptr;
 	ptrToSucc = nullptr;
 }
-
+ostream& operator<<(ostream& out, const Graph& object)
+{
+	for (int i = 0; i < object.verts; i++)
+	{
+		out << object.ptrToVerts[i];
+		cout << *object.ptrToSucc[i];
+	}
+	return out;
+}
 //Overloaded Constructor
 Graph::Graph(int vectorSize)
 {
 	verts = vectorSize;
 	capacity = vectorSize * 2;
-	ptrToVerts = new string[capacity];
-	ptrToSucc = new AnyList*[capacity];
-}
-
-//CreateGraph()
-void Graph::createGraph(const vector<vector<string>>& blueprint)
-{
-	int count = 0;
-	for (auto i : blueprint)
-	{
-		ptrToVerts[count] = i[0];
-
-		int isize = i.size();
-		AnyList successors;
-		for (int j = 0; j < isize; j++)
-		{
-			successors.insertFront(i[j]);
-		}
-		ptrToSucc[count] = &successors;
-		successors.print();
-		count++;
-	}
+	ptrToVerts = new string[capacity]();
+	ptrToSucc = new AnyList*[capacity]();
 }
 //copy constructor
 Graph::Graph(const Graph& otherGraph)
 {
 	capacity = otherGraph.capacity;
 	verts = otherGraph.verts;
-
-	int count = 0;
-	while (otherGraph.ptrToSucc[count])
+	ptrToVerts = new string[capacity]();
+	ptrToSucc = new AnyList*[capacity]();
+	for (int i = 0; i < verts; i++)
 	{
-		ptrToVerts[count] = otherGraph.ptrToVerts[count];
-		ptrToSucc[count] = otherGraph.ptrToSucc[count];
-		count++;
+		ptrToVerts[i] = otherGraph.ptrToVerts[i];
+		ptrToSucc[i] = otherGraph.ptrToSucc[i];
 	}
 }
 //move constructor
@@ -61,10 +48,27 @@ Graph::Graph(Graph&& otherGraph)
 
 	otherGraph.verts = 0;
 	otherGraph.capacity = 0;
-	delete[] otherGraph.ptrToSucc;
 	otherGraph.ptrToSucc = nullptr;
-	delete[] otherGraph.ptrToVerts;
 	otherGraph.ptrToVerts = nullptr;
+}
+//CreateGraph()
+void Graph::createGraph(const vector<vector<string>>& blueprint)
+{
+	int count = 0;
+	for (auto i : blueprint)
+	{
+		ptrToVerts[count] = i[0];
+
+		int isize = static_cast<int>(i.size());
+		AnyList *successors;
+		successors = new AnyList;
+		for (int j = 1; j < isize; j++)
+		{
+			successors->insertFront(i[j]);
+		}
+		ptrToSucc[count] = successors;
+		count++;
+	}
 }
 //assignment operator
 Graph& Graph::operator=(const Graph& otherGraph)
@@ -93,12 +97,10 @@ Graph& Graph::operator=(const Graph& otherGraph)
 		capacity = otherGraph.capacity;
 
 		// start copying
-		int count = 0;
-		while (otherGraph.ptrToSucc[count])
+		for (int i = 0; i < verts; i++)
 		{
-			ptrToVerts[count] = otherGraph.ptrToVerts[count];
-			ptrToSucc[count] = otherGraph.ptrToSucc[count];
-			count++;
+			ptrToVerts[i] = otherGraph.ptrToVerts[i];
+			ptrToSucc[i] = otherGraph.ptrToSucc[i];
 		}
 	}
 	else
@@ -110,19 +112,20 @@ Graph& Graph::operator=(const Graph& otherGraph)
 }
 //move assignment operator
 Graph& Graph::operator=(Graph&& otherGraph)
-{
+{	
 	if (this != &otherGraph)
 	{
+		destroyGraph();
 		verts = otherGraph.verts;
 		capacity = otherGraph.capacity;
 		otherGraph.capacity = 0;
 		otherGraph.verts = 0;
 		//if we are just moving pointers we will have to delete the other array
-		delete[] ptrToVerts;
+		ptrToVerts = new string[capacity]();
 		ptrToVerts = otherGraph.ptrToVerts;
 		otherGraph.ptrToVerts = nullptr;
 
-		delete[] ptrToSucc;
+		ptrToSucc = new AnyList*[capacity]();
 		ptrToSucc = otherGraph.ptrToSucc;
 		otherGraph.ptrToSucc = nullptr;
 	}
@@ -130,6 +133,66 @@ Graph& Graph::operator=(Graph&& otherGraph)
 		cerr << "Attempted assignment of itself." << endl;
 
 	return *this;
+}
+//address of ptrToVerts
+AnyList** Graph::addressVerts() const
+{
+	return ptrToSucc;
+}
+
+//address of ptrToSucc
+ string* Graph::addressSucc() const
+{
+	return ptrToVerts;
+}
+ const Graph* Graph::addressGraph() const
+ {
+	 return this;
+ }
+//insert vert
+void Graph::insertVert(const string& newVert, const vector<string>& pred, const vector<string>& succ)
+{
+	int predLength = static_cast<int>(pred.size());
+	int succLength = static_cast<int>(succ.size());
+	verts++;
+	ptrToVerts[verts] = newVert;
+	AnyList *newSucc;
+	newSucc = new AnyList;
+	for (int i = 0; i < succLength; i++)
+	{
+		newSucc->insertFront(succ[i]);
+	}
+	ptrToSucc[verts] = newSucc;
+	for (int i = 0; i < predLength; i++)
+	{
+		for (int j = 0; j < verts; j++)
+		{
+			if (pred[i] == ptrToVerts[j])
+				ptrToSucc[j]->insertFront(newVert);
+		}
+	}
+}
+
+//is empty
+bool Graph::isEmpty() const
+{
+	return capacity == 0;
+}
+
+//get verts
+int Graph::getVerts() const
+{
+	return verts;
+}
+
+//empty graph
+void Graph::emptyGraph()
+{
+	for (int i = 0; i < verts; i++)
+	{
+		ptrToVerts[i] = "";
+		ptrToSucc[i]->destroyList();
+	}
 }
 //destructroy graph
 void Graph::destroyGraph()
@@ -139,12 +202,8 @@ void Graph::destroyGraph()
 	//delete the object the destructor will call this function causing an error
 	if (capacity > 0)
 	{
-		int count = 0;
-		while (ptrToSucc[count])
-		{
-			ptrToSucc[count]->destroyList();
-			count++;
-		}
+		for(int i = 0; i < verts; i++)
+			ptrToSucc[i]->destroyList();
 		delete[] ptrToSucc;
 		ptrToSucc = nullptr;
 		delete[] ptrToVerts;
@@ -152,26 +211,9 @@ void Graph::destroyGraph()
 		capacity = 0;
 		verts = 0;
 	}
-	else
-		cerr << "List is already empty" << endl;
 }
 //destructor
-//Graph::~Graph()
-//{
-//	destroyGraph();
-//}
-int main()
+Graph::~Graph()
 {
-	vector<vector<string>> data = {
-		{ "A", "B", "E" },
-		{ "B", "C", "D" },
-		{ "C", "D" },
-		{ "D" },
-		{ "E", "D" }
-	};
-	Graph g = Graph(data.size());
-	g.createGraph(data);
-
-	system("Pause");
-	return 0;
+	destroyGraph();
 }
