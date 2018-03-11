@@ -8,6 +8,8 @@
 #include "AnyList.h"
 using namespace std;
 
+const int CAPACITY = 10; // prof said to have this. See default constructor
+
 class Graph
 {
 	friend ostream& operator<<(ostream& out, const Graph& object);
@@ -40,10 +42,10 @@ public:
 	const Graph* addressGraph()const;
 
 	//address of ptrToVerts
-	AnyList** addressVerts() const;
+	string* addressVerts() const;
 
 	//address of ptrToSucc
-	string* addressSucc() const;
+	AnyList** addressSucc() const;
 
 	//creates graph
 	void createGraph(const vector<vector<string>>& blueprint);
