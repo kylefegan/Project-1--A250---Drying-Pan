@@ -4,10 +4,11 @@
 Graph::Graph()
 {
 	verts = 0;
-	capacity = 0;
+	capacity = CAPACITY;
 	ptrToVerts = nullptr;
 	ptrToSucc = nullptr;
 }
+
 ostream& operator<<(ostream& out, const Graph& object)
 {
 	for (int i = 0; i < object.verts; i++)
@@ -17,6 +18,7 @@ ostream& operator<<(ostream& out, const Graph& object)
 	}
 	return out;
 }
+
 //Overloaded Constructor
 Graph::Graph(int vectorSize)
 {
@@ -25,6 +27,7 @@ Graph::Graph(int vectorSize)
 	ptrToVerts = new string[capacity]();
 	ptrToSucc = new AnyList*[capacity]();
 }
+
 //copy constructor
 Graph::Graph(const Graph& otherGraph)
 {
@@ -35,9 +38,12 @@ Graph::Graph(const Graph& otherGraph)
 	for (int i = 0; i < verts; i++)
 	{
 		ptrToVerts[i] = otherGraph.ptrToVerts[i];
-		ptrToSucc[i] = otherGraph.ptrToSucc[i];
+		ptrToSucc[i] = otherGraph.ptrToSucc[i];		
+		// WHY DON'T WE CREATE A COPY OF PTRTOSUCC AND
+		// ASSIGN THE CONSTRUCTED TO THAT? SHALLOW COPY?
 	}
 }
+
 //move constructor
 Graph::Graph(Graph&& otherGraph)
 {
@@ -51,6 +57,7 @@ Graph::Graph(Graph&& otherGraph)
 	otherGraph.ptrToSucc = nullptr;
 	otherGraph.ptrToVerts = nullptr;
 }
+
 //CreateGraph()
 void Graph::createGraph(const vector<vector<string>>& blueprint)
 {
@@ -69,7 +76,10 @@ void Graph::createGraph(const vector<vector<string>>& blueprint)
 		ptrToSucc[count] = successors;
 		count++;
 	}
+	// SHOULD WE ADD THIS STATEMENT:
+	// verts = static_cast<int>(blueprint.size());
 }
+
 //assignment operator
 Graph& Graph::operator=(const Graph& otherGraph)
 {
@@ -94,6 +104,8 @@ Graph& Graph::operator=(const Graph& otherGraph)
 		}
 
 		//update number of elements	
+		// SHOULD WE CHANGE BELOW STATEMENT TO: "verts = other.verts;"
+		// AND MOVE BELOW FOR LOOP?
 		capacity = otherGraph.capacity;
 
 		// start copying
@@ -110,6 +122,7 @@ Graph& Graph::operator=(const Graph& otherGraph)
 
 	return *this;
 }
+
 //move assignment operator
 Graph& Graph::operator=(Graph&& otherGraph)
 {	
@@ -121,11 +134,13 @@ Graph& Graph::operator=(Graph&& otherGraph)
 		otherGraph.capacity = 0;
 		otherGraph.verts = 0;
 		//if we are just moving pointers we will have to delete the other array
+		// IF WE DELETE THE OTHER ARRAY WE LOSE ALL DATA?
+		// I THINK WE SHOULD REMOVE THIS STATEMENT, WE DON'T WANT NEW LOCATION IN MEMORY
 		ptrToVerts = new string[capacity]();
 		ptrToVerts = otherGraph.ptrToVerts;
 		otherGraph.ptrToVerts = nullptr;
 
-		ptrToSucc = new AnyList*[capacity]();
+		ptrToSucc = new AnyList*[capacity](); // SAME
 		ptrToSucc = otherGraph.ptrToSucc;
 		otherGraph.ptrToSucc = nullptr;
 	}
@@ -134,21 +149,24 @@ Graph& Graph::operator=(Graph&& otherGraph)
 
 	return *this;
 }
+
 //address of ptrToVerts
-AnyList** Graph::addressVerts() const
+string* Graph::addressVerts() const
+{
+	return ptrToVerts;
+}
+
+//address of ptrToSucc
+AnyList** Graph::addressSucc() const
 {
 	return ptrToSucc;
 }
 
-//address of ptrToSucc
- string* Graph::addressSucc() const
-{
-	return ptrToVerts;
-}
  const Graph* Graph::addressGraph() const
  {
 	 return this;
  }
+
 //insert vert
 void Graph::insertVert(const string& newVert, const vector<string>& pred, const vector<string>& succ)
 {
@@ -176,7 +194,7 @@ void Graph::insertVert(const string& newVert, const vector<string>& pred, const 
 	}
 	else
 	{
-		cerr << "Attempted to exceed capacity in DArray."<<endl;
+		cerr << "Attempted to exceed capacity in DArray." << endl;
 		exit(0);
 	}
 }
@@ -202,6 +220,7 @@ void Graph::emptyGraph()
 		ptrToSucc[i]->destroyList();
 	}
 }
+
 //destructroy graph
 void Graph::destroyGraph()
 {
@@ -220,6 +239,7 @@ void Graph::destroyGraph()
 		verts = 0;
 	}
 }
+
 //destructor
 Graph::~Graph()
 {
