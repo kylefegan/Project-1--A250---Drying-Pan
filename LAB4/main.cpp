@@ -58,6 +58,10 @@ int main()
 
 	n.emptyGraph();
 	cout << n << endl;
+	
+	Matrix p = move(m);
+	cout << p << endl;
+	cout << m << end;
 
 	system("Pause");
 	return 0;
