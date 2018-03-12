@@ -10,11 +10,16 @@ Graph::Graph()
 }
 ostream& operator<<(ostream& out, const Graph& object)
 {
-	for (int i = 0; i < object.verts; i++)
+	if (object.verts > 0)
 	{
-		out << object.ptrToVerts[i];
-		cout << *object.ptrToSucc[i];
+		for (int i = 0; i < object.verts; i++)
+		{
+			out << object.ptrToVerts[i];
+			cout << *object.ptrToSucc[i];
+		}
 	}
+	else
+		cerr << "Graph is empty" << endl;
 	return out;
 }
 //Overloaded Constructor
@@ -32,6 +37,7 @@ Graph::Graph(const Graph& otherGraph)
 	verts = otherGraph.verts;
 	ptrToVerts = new string[capacity]();
 	ptrToSucc = new AnyList*[capacity]();
+
 	for (int i = 0; i < verts; i++)
 	{
 		ptrToVerts[i] = otherGraph.ptrToVerts[i];
@@ -73,11 +79,13 @@ void Graph::createGraph(const vector<vector<string>>& blueprint)
 //assignment operator
 Graph& Graph::operator=(const Graph& otherGraph)
 {
+
 	if (&otherGraph != this)
 	{
 		//if the array we are passing has a different
 		//  capacity from the calling object,
 		//  then we need to create a new array
+
 		if (capacity != otherGraph.capacity)
 		{
 			//deallocate the memory used by 
@@ -92,7 +100,7 @@ Graph& Graph::operator=(const Graph& otherGraph)
 			capacity = otherGraph.capacity;
 			verts = otherGraph.verts;
 		}
-	
+
 		// start copying
 		for (int i = 0; i < verts; i++)
 		{
@@ -117,7 +125,7 @@ Graph& Graph::operator=(Graph&& otherGraph)
 		capacity = otherGraph.capacity;
 		otherGraph.capacity = 0;
 		otherGraph.verts = 0;
-		
+		//if we are just moving pointers we will have to delete the other array
 		ptrToVerts = new string[capacity]();
 		ptrToVerts = otherGraph.ptrToVerts;
 		otherGraph.ptrToVerts = nullptr;
@@ -138,7 +146,7 @@ string* Graph::addressVerts() const
 }
 
 //address of ptrToSucc
-AnyList** Graph::addressSucc() const
+ AnyList** Graph::addressSucc() const
 {
 	return ptrToSucc;
 }
@@ -173,7 +181,7 @@ void Graph::insertVert(const string& newVert, const vector<string>& pred, const 
 	}
 	else
 	{
-		cerr << "Attempted to exceed capacity in DArray." << endl;
+		cerr << "Attempted to exceed capacity in DArray."<<endl;
 		exit(0);
 	}
 }
@@ -193,19 +201,21 @@ int Graph::getVerts() const
 //empty graph
 void Graph::emptyGraph()
 {
-	for (int i = 0; i < verts; i++)
+	if (verts > 0)
 	{
-		ptrToVerts[i] = "";
-		ptrToSucc[i]->destroyList();
+		for (int i = 0; i < verts; i++)
+		{
+			ptrToVerts[i] = "";
+			ptrToSucc[i]->destroyList();
+		}
 	}
+	else
+		cout << "Graph is already empty!" << endl;
 }
 //destructroy graph
 void Graph::destroyGraph()
 {
-	//since the destructor would call destroyGraph
-	//if we call destroy graph before this and dont properly 
-	//delete the object the destructor will call this function causing an error
-	if (capacity > 0)
+	if (verts > 0)
 	{
 		for(int i = 0; i < verts; i++)
 			ptrToSucc[i]->destroyList();
