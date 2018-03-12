@@ -1,4 +1,5 @@
 #include "Graph.h"
+
 //Default Constructor
 Graph::Graph()
 {
@@ -7,6 +8,7 @@ Graph::Graph()
 	ptrToVerts = new string[capacity]();
 	ptrToSucc = new AnyList*[capacity]();
 }
+
 //Insertion Operator
 ostream& operator<<(ostream& out, const Graph& object)
 {
@@ -21,6 +23,7 @@ ostream& operator<<(ostream& out, const Graph& object)
 	else cerr << "Graph is empty" << endl;
 	return out;
 }
+
 //Overloaded Constructor
 Graph::Graph(int vectorSize)
 {
@@ -29,6 +32,7 @@ Graph::Graph(int vectorSize)
 	ptrToVerts = new string[capacity]();
 	ptrToSucc = new AnyList*[capacity]();
 }
+
 //copy constructor
 Graph::Graph(const Graph& otherGraph)
 {
@@ -43,6 +47,7 @@ Graph::Graph(const Graph& otherGraph)
 		ptrToSucc[i] = otherGraph.ptrToSucc[i];
 	}
 }
+
 //move constructor
 Graph::Graph(Graph&& otherGraph)
 {
@@ -56,6 +61,7 @@ Graph::Graph(Graph&& otherGraph)
 	otherGraph.ptrToSucc = nullptr;
 	otherGraph.ptrToVerts = nullptr;
 }
+
 //CreateGraph()
 void Graph::createGraph(const vector<vector<string>>& blueprint)
 {
@@ -75,6 +81,7 @@ void Graph::createGraph(const vector<vector<string>>& blueprint)
 		count++;
 	}
 }
+
 //assignment operator
 Graph& Graph::operator=(const Graph& otherGraph)
 {
@@ -114,6 +121,7 @@ Graph& Graph::operator=(const Graph& otherGraph)
 
 	return *this;
 }
+
 //move assignment operator
 Graph& Graph::operator=(Graph&& otherGraph)
 {	
@@ -138,6 +146,7 @@ Graph& Graph::operator=(Graph&& otherGraph)
 
 	return *this;
 }
+
 //address of ptrToVerts
 string* Graph::addressVerts() const
 {
@@ -149,10 +158,12 @@ string* Graph::addressVerts() const
 {
 	return ptrToSucc;
 }
+
  const Graph* Graph::addressGraph() const
  {
 	 return this;
  }
+
 //insert vert
 void Graph::insertVert(const string& newVert, const vector<string>& pred, const vector<string>& succ)
 {
@@ -211,6 +222,7 @@ void Graph::emptyGraph()
 	else
 		cout << "Graph is already empty!" << endl;
 }
+
 //destructroy graph
 void Graph::destroyGraph()
 {
@@ -226,6 +238,7 @@ void Graph::destroyGraph()
 		verts = 0;
 	}
 }
+
 //destructor
 Graph::~Graph()
 {
