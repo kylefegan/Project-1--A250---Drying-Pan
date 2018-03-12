@@ -80,6 +80,8 @@ void Graph::createGraph(const vector<vector<string>>& blueprint)
 		ptrToSucc[count] = successors;
 		count++;
 	}
+	
+	verts = static_cast<int>(blueprint.size());
 }
 
 //assignment operator
@@ -104,7 +106,6 @@ Graph& Graph::operator=(const Graph& otherGraph)
 			ptrToVerts = new string[otherGraph.capacity];
 			//update capacity
 			capacity = otherGraph.capacity;
-			verts = otherGraph.verts;
 		}
 
 		// start copying
@@ -113,6 +114,8 @@ Graph& Graph::operator=(const Graph& otherGraph)
 			ptrToVerts[i] = otherGraph.ptrToVerts[i];
 			ptrToSucc[i] = otherGraph.ptrToSucc[i];
 		}
+		
+		verts = otherGraph.verts;
 	}
 	else
 	{
@@ -133,11 +136,9 @@ Graph& Graph::operator=(Graph&& otherGraph)
 		otherGraph.capacity = 0;
 		otherGraph.verts = 0;
 		//if we are just moving pointers we will have to delete the other array
-		ptrToVerts = new string[capacity]();
 		ptrToVerts = otherGraph.ptrToVerts;
 		otherGraph.ptrToVerts = nullptr;
 
-		ptrToSucc = new AnyList*[capacity]();
 		ptrToSucc = otherGraph.ptrToSucc;
 		otherGraph.ptrToSucc = nullptr;
 	}
