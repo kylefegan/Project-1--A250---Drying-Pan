@@ -1,10 +1,10 @@
 #include "Graph.h"
-
+const int CAPACITY = 10;
 //Default Constructor
 Graph::Graph()
 {
 	verts = 0;
-	capacity = 0;
+	capacity = CAPACITY;
 	ptrToVerts = nullptr;
 	ptrToSucc = nullptr;
 }
@@ -92,10 +92,7 @@ Graph& Graph::operator=(const Graph& otherGraph)
 			capacity = otherGraph.capacity;
 			verts = otherGraph.verts;
 		}
-
-		//update number of elements	
-		capacity = otherGraph.capacity;
-
+	
 		// start copying
 		for (int i = 0; i < verts; i++)
 		{
@@ -120,7 +117,7 @@ Graph& Graph::operator=(Graph&& otherGraph)
 		capacity = otherGraph.capacity;
 		otherGraph.capacity = 0;
 		otherGraph.verts = 0;
-		//if we are just moving pointers we will have to delete the other array
+		
 		ptrToVerts = new string[capacity]();
 		ptrToVerts = otherGraph.ptrToVerts;
 		otherGraph.ptrToVerts = nullptr;
@@ -135,15 +132,15 @@ Graph& Graph::operator=(Graph&& otherGraph)
 	return *this;
 }
 //address of ptrToVerts
-AnyList** Graph::addressVerts() const
+string* Graph::addressVerts() const
 {
-	return ptrToSucc;
+	return ptrToVerts;
 }
 
 //address of ptrToSucc
- string* Graph::addressSucc() const
+AnyList** Graph::addressSucc() const
 {
-	return ptrToVerts;
+	return ptrToSucc;
 }
  const Graph* Graph::addressGraph() const
  {
@@ -176,7 +173,7 @@ void Graph::insertVert(const string& newVert, const vector<string>& pred, const 
 	}
 	else
 	{
-		cerr << "Attempted to exceed capacity in DArray."<<endl;
+		cerr << "Attempted to exceed capacity in DArray." << endl;
 		exit(0);
 	}
 }
