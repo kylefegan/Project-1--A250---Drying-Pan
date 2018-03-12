@@ -34,6 +34,16 @@ Matrix::Matrix(const Matrix& otherMatrix)
 	twoD = new int*[capacity]();
 	for (int i = 0; i < capacity; ++i)
 		twoD[i] = new int[capacity]();
+
+	for (int i = 0; i < verts; ++i)
+	{
+		ptrToVerts[i] = otherMatrix.ptrToVerts[i];
+
+		for (int j = 0; j < verts; ++j)
+		{
+			twoD[i][j] = otherMatrix.twoD[i][j];
+		}
+	}
 }
 
 //move constructor
