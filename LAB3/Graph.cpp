@@ -7,8 +7,9 @@
 	CS A200
 	March 11, 2018
 
-	Lab 03
+	Lab 3
 */
+
 #include "Graph.h"
 
 //Default Constructor
