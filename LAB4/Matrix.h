@@ -1,3 +1,15 @@
+/*
+	Fegan, Kyle
+	Manning, Tristan
+	Cortes, Andre
+	Amarith, David
+
+	CS A200
+	March 11, 2018
+
+	Lab 4
+*/
+
 #ifndef MATRIX_H
 #define MATRIX_H
 
