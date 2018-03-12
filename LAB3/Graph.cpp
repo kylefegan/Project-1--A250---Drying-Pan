@@ -190,7 +190,7 @@ void Graph::insertVert(const string& newVert, const vector<string>& pred, const 
 	}
 	else
 	{
-		cerr << "Attempted to exceed capacity in DArray."<<endl;
+		cerr << "Attempted to exceed capacity in DArray." << endl;
 		exit(0);
 	}
 }
