@@ -32,6 +32,12 @@ public:
 
 	//destructor
 	~Matrix();
+	
+	//assignment operator
+	Matrix& operator=(const Matrix&);
+
+	//move assignement operator
+	Matrix& operator=(Matrix&& otherMatrix);
 
 private:
 	int **twoD;
