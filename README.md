@@ -24,18 +24,17 @@ Currently working on Part E: Final Submission (11/12) @MIDNIGHT
 - All variables and objects use the camelCase convention.
 - Updated name header format for all files:
 
-/************************
-	Drying Pan
-
-	Ngo, Matthew
+/*
 	Fegan, Kyle
 	Manning, Tristan
 	Cortes, Andre
+	Amarith, David
 
-	CS A250 - Fall 2017
+	CS A200
+	Month Day, 2018
 
-	Project 1
-*************************/
+	Lab ##
+*/
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
