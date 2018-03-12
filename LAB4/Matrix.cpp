@@ -127,7 +127,6 @@ Matrix::~Matrix()
 }
 
 //assignment operator
-
 Matrix& Matrix::operator=(const Matrix& otherMatrix)
 {
 	if (&otherMatrix != this)
@@ -171,7 +170,6 @@ Matrix& Matrix::operator=(const Matrix& otherMatrix)
 }
 
 //move assignment operator
-
 Matrix& Matrix::operator=(Matrix&& otherMatrix)
 {
 	if (this != &otherMatrix)
@@ -233,10 +231,6 @@ void Matrix::insertVert(const string& newVert, const vector<string>& pred, const
 		cerr << "Attempted to exceed capacity of array." << endl;
 	}
 }
-
-//is empty
-
-//get verts
 
 //empty graph
 void Matrix::emptyGraph()
