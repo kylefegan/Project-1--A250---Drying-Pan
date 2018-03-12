@@ -89,19 +89,23 @@ void Matrix::createMatrix(const vector<vector<string>>& blueprint)
 //insertion operator
 ostream & operator<<(ostream & out, const Matrix & object)
 {
-	for (int i = 0; i < object.verts; i++)
+	if (object.verts > 0)
 	{
-		out << object.ptrToVerts[i] << " ";
-	}
-	out << endl;
-	for (int i = 0; i < object.verts; i++)
-	{
-		for (int j = 0; j < object.verts; j++)
+		for (int i = 0; i < object.verts; i++)
 		{
-			out << object.twoD[j][i] << " ";
+			out << object.ptrToVerts[i] << " ";
 		}
 		out << endl;
+		for (int i = 0; i < object.verts; i++)
+		{
+			for (int j = 0; j < object.verts; j++)
+			{
+				out << object.twoD[j][i] << " ";
+			}
+			out << endl;
+		}
 	}
+	else cerr << "Error: Graph is empty." << endl;
 	return out;
 }
 
