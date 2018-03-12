@@ -118,7 +118,71 @@ Matrix::~Matrix()
 
 //assignment operator
 
+Matrix& Matrix::operator=(const Matrix& otherMatrix)
+{
+	if (&otherMatrix != this)
+	{
+		if (capacity != otherMatrix.capacity)
+		{
+			delete[] ptrToVerts;
+			ptrToVerts = new string[otherMatrix.capacity];
+
+			for (int i = 0; i < verts; i++)
+				delete twoD[i];
+			delete[] twoD;
+
+			twoD = new int*[otherMatrix.capacity]();
+			for (int i = 0; i < otherMatrix.capacity; ++i)
+				twoD[i] = new int[otherMatrix.capacity]();
+
+			capacity = otherMatrix.capacity;
+		}
+
+		verts = otherMatrix.verts;
+
+		//start copying
+		for (int i = 0; i < verts; ++i)
+		{
+			ptrToVerts[i] = otherMatrix.ptrToVerts[i];
+
+			for (int j = 0; j < verts; ++j)
+			{
+				twoD[i][j] = otherMatrix.twoD[i][j];
+			}
+		}
+
+	}
+	else
+	{
+		cerr << "Attempted assignment to itself.";
+	}
+
+	return *this;
+}
+
 //move assignment operator
+
+Matrix& Matrix::operator=(Matrix&& otherMatrix)
+{
+	if (this != &otherMatrix)
+	{
+		destroyMatrix();
+
+		verts = otherMatrix.verts;
+		capacity = otherMatrix.capacity;
+		ptrToVerts = otherMatrix.ptrToVerts;
+		twoD = otherMatrix.twoD;
+
+		otherMatrix.verts = 0;
+		otherMatrix.capacity = 0;
+		otherMatrix.ptrToVerts = nullptr;
+		otherMatrix.twoD = nullptr;
+	}
+	else
+		cerr << "Attempted assignment of itself." << endl;
+
+	return *this;
+}
 
 //insert vert
 
