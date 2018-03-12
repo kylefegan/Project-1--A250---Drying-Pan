@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 using namespace std;
+
 const int CAPACITY = 20;
 
 class Matrix
