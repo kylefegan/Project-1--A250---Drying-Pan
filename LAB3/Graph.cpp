@@ -1,3 +1,14 @@
+/*
+	Fegan, Kyle
+	Manning, Tristan
+	Cortes, Andre
+	Amarith, David
+
+	CS A200
+	March 11, 2018
+
+	Lab 03
+*/
 #include "Graph.h"
 
 //Default Constructor
