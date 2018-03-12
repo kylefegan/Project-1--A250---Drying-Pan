@@ -38,6 +38,12 @@ public:
 
 	//move assignement operator
 	Matrix& operator=(Matrix&& otherMatrix);
+	
+	//empty graph
+	void emptyGraph();
+
+	//insert vertex
+	void insertVert(const string& newVert, const vector<string>& pred, const vector<string>& succ);
 
 private:
 	int **twoD;
