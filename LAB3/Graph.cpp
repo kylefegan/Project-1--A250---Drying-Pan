@@ -8,6 +8,7 @@ Graph::Graph()
 	ptrToVerts = new string[capacity]();
 	ptrToSucc = new AnyList*[capacity]();
 }
+//Insertion Operator
 ostream& operator<<(ostream& out, const Graph& object)
 {
 	if (object.verts > 0)
