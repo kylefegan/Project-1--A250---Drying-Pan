@@ -5,8 +5,8 @@ Graph::Graph()
 {
 	verts = 0;
 	capacity = CAPACITY;
-	ptrToVerts = nullptr;
-	ptrToSucc = nullptr;
+	ptrToVerts = new string[capacity]();
+	ptrToSucc = new AnyList*[capacity]();
 }
 ostream& operator<<(ostream& out, const Graph& object)
 {
