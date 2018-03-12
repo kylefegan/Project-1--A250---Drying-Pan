@@ -18,8 +18,7 @@ ostream& operator<<(ostream& out, const Graph& object)
 			cout << *object.ptrToSucc[i];
 		}
 	}
-	else
-		cerr << "Graph is empty" << endl;
+	else cerr << "Graph is empty" << endl;
 	return out;
 }
 //Overloaded Constructor
