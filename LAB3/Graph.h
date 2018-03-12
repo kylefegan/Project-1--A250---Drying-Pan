@@ -7,6 +7,7 @@
 #include <vector>
 #include "AnyList.h"
 using namespace std;
+const int CAPACITY = 20;
 
 class Graph
 {
