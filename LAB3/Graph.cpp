@@ -65,23 +65,21 @@ Graph::Graph(Graph&& otherGraph)
 //CreateGraph()
 void Graph::createGraph(const vector<vector<string>>& blueprint)
 {
-	int count = 0;
-	for (auto i : blueprint)
+	int size = static_cast<int>(blueprint.size());
+	for (int i = 0; i < size; i++)
 	{
-		ptrToVerts[count] = i[0];
+		ptrToVerts[i] = blueprint[i][0];
 
-		int isize = static_cast<int>(i.size());
+		int isize = static_cast<int>(blueprint[i].size());
 		AnyList *successors;
 		successors = new AnyList;
 		for (int j = 1; j < isize; j++)
 		{
-			successors->insertFront(i[j]);
+			successors->insertFront(blueprint[i][j]);
 		}
-		ptrToSucc[count] = successors;
-		count++;
+		ptrToSucc[i] = successors;
 	}
-	
-	verts = static_cast<int>(blueprint.size());
+	verts = size;
 }
 
 //assignment operator
