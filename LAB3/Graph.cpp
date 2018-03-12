@@ -1,5 +1,4 @@
 #include "Graph.h"
-const int CAPACITY = 10;
 //Default Constructor
 Graph::Graph()
 {
