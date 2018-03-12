@@ -195,9 +195,59 @@ Matrix& Matrix::operator=(Matrix&& otherMatrix)
 }
 
 //insert vert
+void Matrix::insertVert(const string& newVert, const vector<string>& pred, const vector<string>& succ)
+{
+	int predSize = static_cast<int>(pred.size());
+	int succSize = static_cast<int>(succ.size());
+	int count = 0;
+	if (verts < capacity)
+	{
+		ptrToVerts[verts] = newVert;
+
+		//iterate horizontally to add newVert as successor
+		while (count < predSize)
+		{
+			for (int i = 0; i < verts; i++)
+			{
+				if (ptrToVerts[i] == pred[count])
+					twoD[i][verts] = 1;
+			}
+			++count;
+		}
+		count = 0;
+
+		//iterate vertically to add to newVert's successors
+		while (count < succSize)
+		{
+			for (int i = 0; i < verts; i++)
+			{
+				if (ptrToVerts[i] == succ[count])
+					twoD[verts][i] = 1;
+			}
+			++count;
+		}
+		++verts;
+	}
+	else
+	{
+		cerr << "Attempted to exceed capacity of array." << endl;
+	}
+}
 
 //is empty
 
 //get verts
 
 //empty graph
+void Matrix::emptyGraph()
+{
+	for (int i = 0; i < verts; i++)
+	{
+		ptrToVerts[i] = "";
+		for (int j = 0; j < verts; j++)
+		{
+			twoD[j][i] = 0;
+		}
+	}
+	verts = 0;
+}
