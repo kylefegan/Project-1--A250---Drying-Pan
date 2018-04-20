@@ -1,0 +1,126 @@
+#include "AdjMatrixGraph.h"
+
+// copy constructor
+AdjMatrixGraph::AdjMatrixGraph(const AdjMatrixGraph& otherMatrix)
+{
+	numOfVertices = otherMatrix.numOfVertices;
+	maxVertices = otherMatrix.maxVertices;
+	vertices = new string[maxVertices]();
+
+	matrix = new int*[maxVertices]();
+	for (int i = 0; i < maxVertices; ++i)
+		matrix[i] = new int[maxVertices]();
+
+	for (int i = 0; i < numOfVertices; ++i)
+	{
+		vertices[i] = otherMatrix.vertices[i];
+
+		for (int j = 0; j < numOfVertices; ++j)
+		{
+			matrix[i][j] = otherMatrix.matrix[i][j];
+		}
+	}
+}
+
+// move constructor
+AdjMatrixGraph::AdjMatrixGraph(AdjMatrixGraph&& otherMatrix)
+{
+	numOfVertices = otherMatrix.numOfVertices;
+	maxVertices = otherMatrix.maxVertices;
+	vertices = otherMatrix.vertices;
+	matrix = otherMatrix.matrix;
+
+	otherMatrix.numOfVertices = 0;
+	otherMatrix.maxVertices = 0;
+	otherMatrix.vertices = nullptr;
+	otherMatrix.matrix = nullptr;
+}
+
+// overloaded assignment operator
+AdjMatrixGraph& AdjMatrixGraph::operator=(const AdjMatrixGraph& otherMatrix)
+{
+	if (&otherMatrix != this)
+	{
+		if (maxVertices != otherMatrix.maxVertices)
+		{
+			delete[] vertices;
+			vertices = new string[otherMatrix.maxVertices];
+
+			for (int i = 0; i < numOfVertices; i++)
+				delete matrix[i];
+			delete[] matrix;
+
+			matrix = new int*[otherMatrix.maxVertices]();
+			for (int i = 0; i < otherMatrix.maxVertices; ++i)
+				matrix[i] = new int[otherMatrix.maxVertices]();
+
+			maxVertices = otherMatrix.maxVertices;
+		}
+
+		numOfVertices = otherMatrix.numOfVertices;
+
+		//start copying
+		for (int i = 0; i < numOfVertices; ++i)
+		{
+			vertices[i] = otherMatrix.vertices[i];
+
+			for (int j = 0; j < numOfVertices; ++j)
+			{
+				matrix[i][j] = otherMatrix.matrix[i][j];
+			}
+		}
+
+	}
+	else
+	{
+		cerr << "Attempted assignment to itself.";
+	}
+
+	return *this;
+}
+
+// move assignment operator
+AdjMatrixGraph& AdjMatrixGraph::operator=(AdjMatrixGraph&& otherMatrix)
+{
+	if (this != &otherMatrix)
+	{
+		destroyGraph();
+
+		numOfVertices = otherMatrix.numOfVertices;
+		maxVertices = otherMatrix.maxVertices;
+		vertices = otherMatrix.vertices;
+		matrix = otherMatrix.matrix;
+
+		otherMatrix.numOfVertices = 0;
+		otherMatrix.maxVertices = 0;
+		otherMatrix.vertices = nullptr;
+		otherMatrix.matrix = nullptr;
+	}
+	else
+		cerr << "Attempted assignment of itself." << endl;
+
+	return *this;
+}
+
+
+// destructor
+AdjMatrixGraph::~AdjMatrixGraph()
+{
+	destroyGraph();
+}
+
+// destroyGraph
+void AdjMatrixGraph::destroyGraph()
+{
+	if (maxVertices > 0)
+	{
+		for (int i = 0; i < numOfVertices; i++)
+			delete matrix[i];
+		delete[] matrix;
+		matrix = nullptr;
+		delete[] vertices;
+		vertices = nullptr;
+		maxVertices = 0;
+		numOfVertices = 0;
+	}
+}
