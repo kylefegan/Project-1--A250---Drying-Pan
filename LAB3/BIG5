@@ -1,0 +1,117 @@
+// copy constructor
+AdjListGraph::AdjListGraph(const AdjListGraph& otherGraph)
+{
+	maxVertices = otherGraph.maxVertices;
+	numOfVertices = otherGraph.numOfVertices;
+	vertices = new string[maxVertices]();
+	list = new AnyList*[maxVertices]();
+
+	for (int i = 0; i < numOfVertices; i++)
+	{
+		vertices[i] = otherGraph.vertices[i];
+		list[i] = otherGraph.list[i];
+	}
+}
+
+// move constructor
+AdjListGraph::AdjListGraph(AdjListGraph&& otherGraph)
+{
+	numOfVertices = otherGraph.numOfVertices;
+	maxVertices = otherGraph.maxVertices;
+	list = otherGraph.list;
+	vertices = otherGraph.vertices;
+
+	otherGraph.numOfVertices = 0;
+	otherGraph.maxVertices = 0;
+	otherGraph.list = nullptr;
+	otherGraph.vertices = nullptr;
+}
+
+
+// overloaded assignment operator (short version)
+AdjListGraph& AdjListGraph::operator=(const AdjListGraph& otherGraph)
+{
+
+	if (&otherGraph != this)
+	{
+		//if the array we are passing has a different
+		//  capacity from the calling object,
+		//  then we need to create a new array
+
+		if (maxVertices != otherGraph.maxVertices)
+		{
+			//deallocate the memory used by 
+			//  the calling object and
+			//  re-create the object so that 
+			//  it has the same capacity
+			delete[] list;
+			list = new AnyList*[otherGraph.maxVertices];
+			delete[] vertices;
+			vertices = new string[otherGraph.maxVertices];
+			//update capacity
+			maxVertices = otherGraph.maxVertices;
+		}
+
+		// start copying
+		for (int i = 0; i < otherGraph.numOfVertices; i++)
+		{
+			vertices[i] = otherGraph.vertices[i];
+			list[i] = otherGraph.list[i];
+		}
+
+		numOfVertices = otherGraph.numOfVertices;
+	}
+	else
+	{
+		cerr << "Attempted assignment to itself.";
+	}
+
+	return *this;
+}
+
+// move assignment operator
+AdjListGraph& AdjListGraph::operator=(AdjListGraph&& otherGraph)
+{
+	if (this != &otherGraph)
+	{
+		destroyGraph();
+		numOfVertices = otherGraph.numOfVertices;
+		maxVertices = otherGraph.maxVertices;
+		otherGraph.maxVertices = 0;
+		otherGraph.numOfVertices = 0;
+		//if we are just moving pointers we will have to delete the other array
+		vertices = otherGraph.vertices;
+		otherGraph.vertices = nullptr;
+
+		list = otherGraph.list;
+		otherGraph.list = nullptr;
+	}
+	else
+		cerr << "Attempted assignment of itself." << endl;
+
+	return *this;
+}
+
+// destructor
+AdjListGraph::~AdjListGraph()
+{
+	destroyGraph();
+}
+
+// destroyGraph
+void AdjListGraph::destroyGraph()
+{
+	if (numOfVertices > 0)
+	{
+		for (int i = 0; i < numOfVertices; i++)
+			list[i]->destroyList();
+		delete[] list;
+		list = nullptr;
+		delete[] vertices;
+		vertices = nullptr;
+		maxVertices = 0;
+		numOfVertices = 0;
+	}
+}
+
+
