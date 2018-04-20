@@ -1,3 +1,5 @@
+#include "AdjListGraph.h"
+
 // copy constructor
 AdjListGraph::AdjListGraph(const AdjListGraph& otherGraph)
 {
@@ -5,11 +7,13 @@ AdjListGraph::AdjListGraph(const AdjListGraph& otherGraph)
 	numOfVertices = otherGraph.numOfVertices;
 	vertices = new string[maxVertices]();
 	list = new AnyList*[maxVertices]();
+	
 
 	for (int i = 0; i < numOfVertices; i++)
 	{
 		vertices[i] = otherGraph.vertices[i];
-		list[i] = otherGraph.list[i];
+		list[i] = new AnyList;
+		*list[i] = *otherGraph.list[i];
 	}
 }
 
@@ -56,7 +60,8 @@ AdjListGraph& AdjListGraph::operator=(const AdjListGraph& otherGraph)
 		for (int i = 0; i < otherGraph.numOfVertices; i++)
 		{
 			vertices[i] = otherGraph.vertices[i];
-			list[i] = otherGraph.list[i];
+			list[i] = new AnyList;
+			*list[i] = *otherGraph.list[i];
 		}
 
 		numOfVertices = otherGraph.numOfVertices;
